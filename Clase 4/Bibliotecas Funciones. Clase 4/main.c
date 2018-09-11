@@ -3,15 +3,16 @@
 #include "Biblioteca.h"
 
 int main()
-{
+{/*
     int x = 10;
     x=incrementarValor(x);
     printf("x=%d", x);
+    */
 
 
 
-/*
-{
+
+
     int edad;
     int nota;
     int legajo;
@@ -23,6 +24,6 @@ int main()
     printf("Nota: %d\n", nota);
     legajo=pedirEntero("Ingrese legajo: ");
     printf("Legajo: %d\n", legajo);
-*/
+
     return 0;
 }
