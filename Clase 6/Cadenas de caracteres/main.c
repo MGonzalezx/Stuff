@@ -4,13 +4,14 @@
  //strlen. strcpy, strcmp/stricmp
 int main()
 {
-    char cadena[20]="Perro";
-    char cadena2[50]="mgato";
-    int estado;
+    char cadena1[5];
+    char cadena2[100]="Hola como estas?";
 
-    strcat(cadena2,cadena);
+ // La cadena origen tiene màs caracteres que la cadena1 entonces solo elejimos que pase 4 caracteres
+ // Como resultado va a aparecer "Hola"
+    strncpy(cadena1,cadena2,4);
 
-    puts(cadena2);
+    puts(cadena1);
 
     //printf("%d", estado);
 
@@ -63,6 +64,15 @@ char cadena[20];
 
     puts(cadena2);
 
+
+
+    char cadena[20]="Perro";
+    char cadena2[50]="mgato";
+    int estado;
+
+    strcat(cadena2,cadena);
+
+    puts(cadena2);
 
 
 
