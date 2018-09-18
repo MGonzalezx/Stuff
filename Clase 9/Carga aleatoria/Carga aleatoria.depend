@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1537275708 source:c:\users\alumno\desktop\nueva carpeta\stuff\clase 9\carga aleatoria\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+

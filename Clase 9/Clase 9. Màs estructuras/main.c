@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <conio.h>
 #define A 3
 typedef struct
 {
@@ -9,11 +10,14 @@ typedef struct
     char nombre[50];
     float altura;
     int nota;
+    int estado;
+
 } eAlumno;
 
 void ordenarPorNombres(eAlumno[], int);
 void cargarListadoDeAlumnos(eAlumno[], int);
 void mostrarListadoDeAlumnos(eAlumno[], int);
+void modificarListadoDeAlumnos(eAlumno[], int);
 
 void mostrartUnAlumno(eAlumno);
 eAlumno cargarUnAlumno();
@@ -22,13 +26,38 @@ eAlumno cargarUnAlumno();
 
 int main()
 {
+
     eAlumno listadoMain[A];
-    cargarListadoDeAlumnos(listadoMain, A);
-    printf("\n");
-    mostrarListadoDeAlumnos(listadoMain, A);
-    ordenarPorNombres(listadoMain, A);
-    printf("\n");
-    mostrarListadoDeAlumnos(listadoMain, A);
+    //inicializar alumnos
+    int i;
+    for(i=0; i<A; i++)
+    {
+        listadoMain[i].estado = -1;
+    }
+    char opcion;
+    do
+    { printf("a. Alta de alumno\no. Ordenar lista de alumnos\nm. Mostrar listado\nM. \ns. Salir");
+    printf("\nIngrese una opcion: \n");
+    opcion = getche();
+    switch(opcion)
+    {
+    case 'a':
+        cargarListadoDeAlumnos(listadoMain, A);
+        break;
+    case 'o':
+        ordenarPorNombres(listadoMain, A);
+        break;
+    case 'm':
+        mostrarListadoDeAlumnos(listadoMain, A);
+        break;
+    case 'M':
+        modificarListadoDeAlumnos(listadoMain, A);
+        break;
+    }
+
+    }while(opcion !='s');
+
+
 
 
     return 0;
@@ -39,7 +68,7 @@ eAlumno cargarUnAlumno()
     eAlumno miAlumno;
 
     //eAlumno miAlumno={123, "Juan", 1.84, 7};
-    printf("Ingrese legajo: ");
+    printf(" Ingrese legajo: ");
     scanf("%d", &miAlumno.legajo);
     printf("Ingrese nombre: ");
     fflush(stdin);
@@ -103,4 +132,23 @@ void ordenarPorNombres(eAlumno listado[], int tam)
     }
 
 
+}
+
+void modificarListadoDeAlumnos(eAlumno listado[], int tam)
+{
+    int legajo;
+    int i;
+    printf("Ingrese un legajo a buscar: "):
+        scanf("%d", &legajo);
+        for(i=0; i<tam; i++)
+        {
+            if(legajo == listado[i].legajo)
+            {
+                //mostrar el alumno
+                //pedir nueva nota
+                //pregunto si esta seguro de realizar la modificiacion
+                //SI. Hago modificacion
+                //NO. Aviso que se cancelo la modificacion
+            }
+        }
 }
