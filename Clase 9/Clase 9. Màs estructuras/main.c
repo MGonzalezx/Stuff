@@ -34,9 +34,10 @@ int main()
     {
         listadoMain[i].estado = -1;
     }
+
     char opcion;
     do
-    { printf("a. Alta de alumno\no. Ordenar lista de alumnos\nm. Mostrar listado\nM. \ns. Salir");
+    { printf("a. Alta de alumno\no. Ordenar lista de alumnos\nm. Mostrar listado\nM. Modificar listado \ns. Salir");
     printf("\nIngrese una opcion: \n");
     opcion = getche();
     switch(opcion)
@@ -138,7 +139,7 @@ void modificarListadoDeAlumnos(eAlumno listado[], int tam)
 {
     int legajo;
     int i;
-    printf("Ingrese un legajo a buscar: "):
+    printf("Ingrese un legajo a buscar: ");
         scanf("%d", &legajo);
         for(i=0; i<tam; i++)
         {
