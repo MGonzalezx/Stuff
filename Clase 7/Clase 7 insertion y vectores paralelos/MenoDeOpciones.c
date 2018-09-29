@@ -52,7 +52,7 @@ void menuDeOpciones()
             nombresQueInicianConP(listadoMain, A);
             break;
         case 7:
-            modificarListadoDeAlumnos(listadoMain, A);
+            alumnosConNotaMasAlta(listadoMain, A);
             break;
         case 8:
             modificarListadoDeAlumnos(listadoMain, A);

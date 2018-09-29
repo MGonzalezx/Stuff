@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1538236908 source:c:\users\alumno\desktop\nueva carpeta\stuff\clase repaso\prueba repaso\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"BibliotecaPruebaRepaso.h"
+
+1538236011 c:\users\alumno\desktop\nueva carpeta\stuff\clase repaso\prueba repaso\bibliotecapruebarepaso.h
+
+1538236238 source:c:\users\alumno\desktop\nueva carpeta\stuff\clase repaso\prueba repaso\bibliotecapruebarepaso.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"BibliotecaPruebaRepaso.h"
+
