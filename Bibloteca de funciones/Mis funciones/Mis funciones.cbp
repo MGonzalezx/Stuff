@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Mis funciones" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Mis funciones" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Mis funciones" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../AMB-EstructuraGenerica-master/EstructuraGenerica.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../AMB-EstructuraGenerica-master/EstructuraGenerica.h" />
+		<Unit filename="CadenasDeCaracteres.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CadenasDeCaracteres.h" />
+		<Unit filename="CargaAleatoria.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CargaAleatoria.h" />
+		<Unit filename="FuncionesAlumnos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="FuncionesAlumnos.h" />
+		<Unit filename="MenoDeOpciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MenoDeOpciones.h" />
+		<Unit filename="NumerosParaCalculos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="NumerosParaCalculos.h" />
+		<Unit filename="Vectores.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Vectores.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
