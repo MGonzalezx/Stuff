@@ -12,7 +12,7 @@ static int ultimoID()
 {
     static int id = 0;
     id++;
-    return id;
+    return id; //Este ID va a aumentar automaticamente
 }
 int buscarLibre(eAsociado listado[], int cantidad)
 {
