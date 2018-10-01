@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1538401186 source:c:\users\alumno\desktop\nueva carpeta\stuff\clase 11\gerflix-master\gerflix 1.0\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Usuario.h"
+	"Serie.h"
+	"MenuOpciones.h"
+
+1538402514 c:\users\alumno\desktop\nueva carpeta\stuff\clase 11\gerflix-master\gerflix 1.0\usuario.h
+
+1538403302 c:\users\alumno\desktop\nueva carpeta\stuff\clase 11\gerflix-master\gerflix 1.0\serie.h
+
+1538399121 c:\users\alumno\desktop\nueva carpeta\stuff\clase 11\gerflix-master\gerflix 1.0\menuopciones.h
+
+1538403420 source:c:\users\alumno\desktop\nueva carpeta\stuff\clase 11\gerflix-master\gerflix 1.0\menuopciones.c
+	<stdio.h>
+	<stdlib.h>
+	"Usuario.h"
+	"Serie.h"
+	"MenuOpciones.h"
+
+1538402405 source:c:\users\alumno\desktop\nueva carpeta\stuff\clase 11\gerflix-master\gerflix 1.0\serie.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Usuario.h"
+	"MenuOpciones.h"
+	"Serie.h"
+
+1524745335 source:c:\users\alumno\desktop\nueva carpeta\stuff\clase 11\gerflix-master\gerflix 1.0\usuario.c
+	"Usuario.h"
+
