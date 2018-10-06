@@ -1,20 +1,19 @@
-#define B 500
+#include <stdio.h>
+
 typedef struct
 {
     int dia;
     int mes;
     int anio;
-
 }eFecha;
-
-
-
 typedef struct
 {
-
-    char nombre[50];
-    char paisOrigen[50];
+    int id;
+    char nombre[20];
     eFecha nacimiento;
-    eFecha ingreso;
+    char nacionalidad;
 
-} eDirector;
+
+
+
+}eDirector;

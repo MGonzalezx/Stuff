@@ -31,7 +31,7 @@
 */
 
 
-/*int cargarUnAsociado(eAsociado listado[], int cantidad)
+int cargarUnAsociado(eAsociado listado[], int cantidad)
 {
     int index = buscarLibre(listado, cantidad);
 
@@ -67,7 +67,7 @@
     listado[index]=miAsociado;
 
     return 1;
-}*/
+}
 
 
 /*void modificarUnAsociado(eAsociado listado[], int tam)

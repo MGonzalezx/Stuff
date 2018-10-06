@@ -17,7 +17,7 @@ int eGen_init( eGenerica listado[],int limite)
         retorno = 0;
         for(i=0; i<limite; i++)
         {
-            listado[i].estado= LIBRE;
+            listado[i].estado = LIBRE;
             listado[i].idGenerica= 0;
         }
     }
@@ -162,6 +162,39 @@ int eGen_alta(eGenerica  listado[],int limite)
     }
     return retorno;
 }
+
+
+int cargarDatos(egenerico listado[], int cantidad)
+    {
+
+
+    int index = buscarLibrePelicula(listado, cantidad)
+
+
+    ePelicula miPelicula;
+
+    printf("Ingrese Titulo: ");
+    fflush(stdin);
+    gets(miPelicula.titulo);
+    printf("Ingrese Anio: ");
+    scanf("%d", &miPelicula.anio);
+    if(miPelicula.anio < 1900 || miPelicula.anio > 2018)
+    {
+        printf("Error! Ingresar anio entre 1900 y 2018: ");
+        scanf("%d", &miPelicula.anio);
+    }
+    printf("Ingrese Nacionalidad: ");
+    fflush(stdin);
+    gets(miPelicula.nacionalidad);
+    printf("Ingrese ID del director: ");
+    scanf("%d", &miPelicula.idDirector);
+
+    listado[index]= miPelicula ;
+
+    return 1;
+
+}
+
 
 /*#include<stdio.h>
 #include<string.h>

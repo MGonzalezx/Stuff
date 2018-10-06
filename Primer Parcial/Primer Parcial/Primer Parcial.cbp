@@ -31,6 +31,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../utn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../utn.h" />
+		<Unit filename="Directores.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Directores.h" />
+		<Unit filename="MenuDeOpciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MenuDeOpciones.h" />
+		<Unit filename="Peliculas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Peliculas.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -38,7 +54,6 @@
 			<code_completion />
 			<envvars />
 			<debugger />
-			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

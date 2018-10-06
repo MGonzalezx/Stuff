@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+#include <conio.h>
 #include "Peliculas.h"
 #include "Directores.h"
 #include "MenuDeOpciones.h"
 
 int main()
 {
+
     menuDeOpciones();
-
-  return 0;
+    return 0;
 }
-
