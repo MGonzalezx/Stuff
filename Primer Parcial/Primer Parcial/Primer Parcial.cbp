@@ -31,10 +31,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../../utn.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../../utn.h" />
 		<Unit filename="Directores.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -50,6 +46,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="utn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="utn.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

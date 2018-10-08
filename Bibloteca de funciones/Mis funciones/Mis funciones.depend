@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1538181155 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\main.c
+1538857445 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\main.c
 	<stdio.h>
 	<stdlib.h>
 	"NumerosParaCalculos.h"
@@ -8,50 +8,51 @@
 	<string.h>
 	<ctype.h>
 
-1538178844 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\numerosparacalculos.h
+1538857445 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\numerosparacalculos.h
 
-1538177030 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\numerosparacalculos.c
+1538857445 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\numerosparacalculos.c
 	<stdio.h>
 	<stdlib.h>
 	"NumerosParaCalculos.h"
 
-1538181151 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\vectores.h
+1538857445 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\vectores.h
 
-1538181151 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\vectores.c
+1538857445 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\vectores.c
 	"Vectores.h"
 	<stdio.h>
 	<stdlib.h>
 
-1538180316 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\cadenasdecaracteres.h
+1538857445 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\cadenasdecaracteres.h
 
-1538180316 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\cadenasdecaracteres.c
+1538857445 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\cadenasdecaracteres.c
 	"CadenasDeCaracteres.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 
-1538180760 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\cargaaleatoria.c
+1538857445 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\cargaaleatoria.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	<conio.h>
 
-1538171663 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\funcionesalumnos.c
+1538857445 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\funcionesalumnos.c
 	"FuncionesAlumnos.h"
 	"MenoDeOpciones.h"
 	<stdio.h>
+	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	<conio.h>
 
-1538171663 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\funcionesalumnos.h
+1538857445 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\funcionesalumnos.h
 
-1538171663 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\menodeopciones.h
+1538857445 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\menodeopciones.h
 
-1538171663 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\menodeopciones.c
+1538857445 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\mis funciones\menodeopciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -59,4 +60,16 @@
 	<conio.h>
 	"MenoDeOpciones.h"
 	"FuncionesAlumnos.h"
+
+1538857445 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\amb-estructuragenerica-master\estructuragenerica.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"EstructuraGenerica.h"
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+
+1538857445 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\bibloteca de funciones\amb-estructuragenerica-master\estructuragenerica.h
 

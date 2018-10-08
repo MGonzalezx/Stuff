@@ -6,17 +6,18 @@
 #include "Peliculas.h"
 #include "Directores.h"
 #include "MenuDeOpciones.h"
-#define CANTIDADPELICULAS 4
-#define CANTIDADDIREC 2
+#define CANTIDADPELICULAS 2
+#define CANTIDADDIRECTORES 2
 
 
 void menuDeOpciones()
 {
     ePelicula listadoMainPelicula[CANTIDADPELICULAS];
-    eDirector listadoDirecores[CANTIDADDIREC];
+    eDirector listadoMainDirectores[CANTIDADDIRECTORES];
     inicializarPelicula( listadoMainPelicula,CANTIDADPELICULAS);
+    inicializarDirector( listadoMainDirectores,CANTIDADDIRECTORES);
 
-      /*  inicializarPelicula(listadoMainPelicula, A);
+      /*  inicializarPelicula(listadoMainPelicula, CANTIDADPELICULAS);
         listadoMainPelicula[0].anio = 2008;
         listadoMainPelicula[0].idDirector = 1;
         listadoMainPelicula[0].identidficador = 0;
@@ -35,16 +36,16 @@ void menuDeOpciones()
         listadoDirecores[0].nacimiento.anio = 1900;
         listadoDirecores[0].nacimiento.mes = 3;
         listadoDirecores[0].nacimiento.dia = 2;
-        strcpy(listadoDirecores[0].nombre, "Marquitos");*/
+        strcpy(listadoDirecores[0].nombre, "Marquitos"); */
 
 
     int opcion;
     do
     {
-        printf("1. Alta pelicula");
-        printf("\n2. ");
-        printf("\n3. ");
-        printf("\n4. ");
+        printf("\n1. Alta pelicula");
+        printf("\n2. Modificar datos de una pelicula ");
+        printf("\n3. Dar de baja pelicula");
+        printf("\n4. Ingresar Nuevo director");
         printf("\n5. ");
         printf("\n6. Informar");
         printf("\n7. Salir");
@@ -56,19 +57,22 @@ void menuDeOpciones()
             cargarDatosPelicula(listadoMainPelicula,CANTIDADPELICULAS);
             break;
         case 2:
-
+                modificarUnaPelicula(listadoMainPelicula, CANTIDADPELICULAS);
             break;
         case 3:
-
+                darDeBajaPelicula(listadoMainPelicula, CANTIDADPELICULAS);
             break;
         case 4:
-
+            cargarDatosDirector(listadoMainDirectores, CANTIDADDIRECTORES);
             break;
         case 5:
 
             break;
         case 6:
+            printf("ID    Titulo         Anio    Nacionalidad   IDDirector\n ");
             listadoPelicula(listadoMainPelicula, CANTIDADPELICULAS);
+            printf("\nID    Nombre         Fecha de Nacimiento    Nacionalidad");
+            listadoDirectores(listadoMainDirectores, CANTIDADDIRECTORES);
             break;
 
         }
