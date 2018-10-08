@@ -172,7 +172,8 @@ void modificarUnaPelicula(ePelicula listado[], int cantidad)
             opcion=getche();
 
             do
-            {   printf("\n¿Que cambios desea hacer?");
+            {
+                printf("\n¿Que cambios desea hacer?");
                 printf("\na. Cambiar titulo");
                 printf("\nb. Cambiar anio ");
                 printf("\nc. Cambiar Nacionalidad");
@@ -278,7 +279,7 @@ void darDeBajaPelicula(ePelicula listado[], int cantidad)
         {
 
 
-            printf("\nID de pelicula encontrado!!. ¨Seguro desea dar de baja? s=si n=no\n ");
+            printf("\nID de pelicula encontrada!!. ¨Seguro desea dar de baja? s=si n=no\n ");
             opcion=getche();
             if(opcion=='s')
             {
@@ -296,7 +297,7 @@ void darDeBajaPelicula(ePelicula listado[], int cantidad)
     }
     if(flag==0)
     {
-        printf("ID inexistente, ustede sera devuelto al menu principal\n");
+        printf("ID inexistente, usted sera devuelto al menu principal\n");
         getch();
     }
 }

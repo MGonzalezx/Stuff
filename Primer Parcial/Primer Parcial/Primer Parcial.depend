@@ -1,16 +1,17 @@
 # depslib dependency file v1.0
-1538827754 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\directores.c
+1539015245 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\directores.c
+	<stdio.h>
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	<conio.h>
+	"utn.h"
 	"Directores.h"
 
-1538833305 c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\directores.h
-	<stdio.h>
+1539014808 c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\directores.h
 
-1538828421 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\main.c
+1539009461 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -20,9 +21,9 @@
 	"Directores.h"
 	"MenuDeOpciones.h"
 
-1538841903 c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\peliculas.h
+1539009461 c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\peliculas.h
 
-1538841824 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\menudeopciones.c
+1539015182 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\menudeopciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -32,15 +33,17 @@
 	"Directores.h"
 	"MenuDeOpciones.h"
 
-1538841750 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\peliculas.c
+1539012609 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\peliculas.c
+	<stdio.h>
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	<conio.h>
+	"utn.h"
 	"Peliculas.h"
 
-1538841520 c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\menudeopciones.h
+1539009461 c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\menudeopciones.h
 
 1538827280 source:c:\users\alumno\desktop\nueva carpeta\stuff\utn.c
 	<stdio.h>
@@ -114,4 +117,13 @@
 	"utn.h"
 
 1538857445 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer parcial\primer parcial\utn.h
+
+1539009461 c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\utn.h
+
+1539009461 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer parcial\primer parcial\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
 

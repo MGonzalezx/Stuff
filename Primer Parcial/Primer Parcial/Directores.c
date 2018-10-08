@@ -57,7 +57,7 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
     getchar();
     if(index >=0)
     {
-        int i;
+
         char buffer[1024];
 
         eDirector miDirector;
@@ -69,11 +69,13 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
         printf("\nIngrese Nombre: ");
         fflush(stdin);
         gets(buffer);
-        while(strlen(buffer)>20 || buffer == listado[i].nombre )
+        int i = 0;
+        while(strlen(buffer)>20)
         {
             printf("Reingrese Nombre: ");
             fflush(stdin);
             gets(buffer);
+            i++;
         }
         strcpy(miDirector.nombre, buffer);
 
@@ -99,7 +101,7 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
         scanf("%d", &miDirector.nacimiento.dia);
         while(miDirector.nacimiento.dia < 1 || miDirector.nacimiento.dia > 31)
         {
-             printf("Error! Reingresar dia de nacimiento: \n");
+            printf("Error! Reingresar dia de nacimiento: \n");
             printf("Ingrese mes de nacimiento: ");
             scanf("%d", &miDirector.nacimiento.dia);
         }
@@ -131,7 +133,7 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
 
 void mostrarUnDirector(eDirector unDirector)
 {
-    printf("\n%-7d%-14s%7d/%d/%d%16s\n ", unDirector.id, unDirector.nombre, unDirector.nacimiento.anio, unDirector.nacimiento.mes, unDirector.nacimiento.dia, unDirector.nacionalidad);
+    printf("\n%-7d%-14s%7d/%d/%d%19s\n ", unDirector.id, unDirector.nombre, unDirector.nacimiento.dia, unDirector.nacimiento.mes, unDirector.nacimiento.anio, unDirector.nacionalidad);
 
 }
 
@@ -154,3 +156,46 @@ int listadoDirectores(eDirector listado[],int cantidad)
     }
     return retorno;
 }
+
+void darDeBajaDirector(eDirector listado[], int cantidad)
+{
+    int id;
+    int flag=0;
+    int i;
+    char opcion;
+    printf("Ingrese ID de director a dar de baja: ");
+    scanf("%d", &id);
+    for(i=0; i<cantidad; i++)
+    {
+        if(id==listado[i].id)
+        {
+            printf("\nID encontrado: \n");
+            printf("Nombre: %s\n", listado[i].nombre);
+            printf("Nacionalidad: %s\n", listado[i].nacionalidad);
+            printf("Fecha de nacimiento: %d/%d/%d\n", listado[i].nacimiento.dia,listado[i].nacimiento.mes, listado[i].nacimiento.anio);
+
+
+
+            printf("\n Seguro desea dar de baja? s=si n=no\n ");
+            opcion=getche();
+            if(opcion=='s')
+            {
+                listado[i].id=0;
+                listado[i].estado=isEmpty;
+                printf("\n­­Registro eliminado!!\n");
+            }
+            else if(opcion=='n')
+            {
+                printf("\nEl registro no fue eliminado!\n");
+            }
+            flag=1;
+            break;
+        }
+    }
+    if(flag==0)
+    {
+        printf("ID inexistente\n");
+        getch();
+    }
+}
+

@@ -68,3 +68,8 @@ void mostrarUnDirector(eDirector unDirector);
  *
  */
 int listadoDirectores(eDirector listado[],int);
+
+
+void darDeBajaDirector(eDirector listado[], int cantidad);
+
+
