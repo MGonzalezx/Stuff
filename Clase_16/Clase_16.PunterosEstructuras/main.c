@@ -29,21 +29,39 @@ int main()
     //GMD. GESTION DINAMICA DE MEMORIA
     int* pEntero;
     int i;
+    int* pAuxiliar;
 
     pEntero = (int*) malloc(sizeof(int)*5); //En forma de Array. Es una variable que esta en la pila que apunta
-                                            //a un vector que esta en el git
-    if(pEntero != NULL){
+    //a un vector que esta en el git
+    if(pEntero != NULL)
+    {
         for(i=0; i<5; i++)
         {
             printf("Ingrese valor :");
             scanf("%d",pEntero+i);
         }
+
+
         for(i=0; i<5; i++)
         {
-            printf("%d", *(pEntero+i));
+            printf("%d\n", *(pEntero+i));
         }
     }
-    pEntero = realloc(pEntero, sizeof(int)*10);
+
+    printf("\nREALLOC: \n");
+    pAuxiliar = realloc(pEntero, sizeof(int)*10);
+    if(pAuxiliar != NULL)
+    {
+        pEntero = pAuxiliar;
+
+        for(i=0; i<10; i++)
+        {
+
+            printf("%d\n",*(pEntero+i));
+        }
+    }
+
+
 
     /*if(pEntero != NULL)
     {
@@ -51,7 +69,7 @@ int main()
 
         printf("%d", *pEntero);
     }
-*/
+    */
 
 
 //--------------------------------------------------------------------------------------------------------------------
