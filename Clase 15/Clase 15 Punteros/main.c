@@ -6,10 +6,6 @@ void cargarArray (int*, int );
 void mostrarArray(int*, int );
 void ordenarArray (int*, int);
 
-
-
-
-
 int main()
 {
 
