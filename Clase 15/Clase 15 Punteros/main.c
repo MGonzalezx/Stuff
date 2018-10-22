@@ -62,7 +62,7 @@ void ordenarArray (int* vector, int tam)
     {
         for(j=i+1; j<tam; j++)
         {
-            if(vector[i]>vector[j]) //if(vector[i]<vector[j]) de abajo para arriba
+            if(vector[i]>vector[j]) //if(vector[i]<vector[j]) de abajo para arriba 
             {
                 auxiliar=vector[i];
                 vector[i] = vector[j];
