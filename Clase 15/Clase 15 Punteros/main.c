@@ -9,6 +9,7 @@ void ordenarArray (int*, int);
 int main()
 {
 
+
     int x [5];
 
 
