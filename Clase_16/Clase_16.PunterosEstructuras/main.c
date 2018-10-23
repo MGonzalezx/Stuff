@@ -5,7 +5,7 @@ typedef struct
 
     int a;
     char b;
-    int entero;
+
 
 } eDato;
 
@@ -41,7 +41,6 @@ int main()
             scanf("%d",pEntero+i);
         }
 
-
         for(i=0; i<5; i++)
         {
             printf("%d\n", *(pEntero+i));
@@ -53,8 +52,25 @@ int main()
     if(pAuxiliar != NULL)
     {
         pEntero = pAuxiliar;
+        for(i=5; i<10; i++)
+        {
+
+            *(pEntero+i) = i+1 ; //Harcodeo
+        }
 
         for(i=0; i<10; i++)
+        {
+
+            printf("%d\n",*(pEntero+i));
+        }
+    }
+
+    printf("\nREALLOC Achicar: \n");
+    //En este caso usamos pEntero devuelta ya que vamos a mostrar espacios ya usados
+    pEntero = realloc(pEntero, sizeof(int)*3);
+    if(pAuxiliar != NULL)
+    {
+        for(i=0; i<3; i++)
         {
 
             printf("%d\n",*(pEntero+i));
@@ -88,6 +104,7 @@ int main()
     /*printf("%d-", (*(pDato+i)).a); Muestro el int
     printf("%c-", (*(pDato+i)).b); Muestro el char*/
 
+//--------------------------------------------------------------------------------------------------------------------
 
     /*eDato datito = {9, 'c'};
 
