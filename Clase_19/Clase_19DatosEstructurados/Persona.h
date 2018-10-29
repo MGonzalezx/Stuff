@@ -1,11 +1,11 @@
 typedef struct
 {
-    char name [500];
-    char lastName[500];
-    char id[500];
-    char isEmpty[500];
+    char nombre [500];
+    char apellido[500];
+    int id[500];
+    int isEmpty[500];
 
 
 } ePersona;
 
-ePersona* nuevaPersona(int, char*, int);
+ePersona* nuevaPersona(int id, char* nombre, char* apellido);
