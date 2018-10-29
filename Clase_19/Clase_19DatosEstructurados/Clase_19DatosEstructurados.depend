@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1540826458 source:c:\users\alumno\desktop\nueva carpeta\stuff\clase_19\clase_19datosestructurados\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Persona.h"
+
+1540827091 c:\users\alumno\desktop\nueva carpeta\stuff\clase_19\clase_19datosestructurados\persona.h
+
