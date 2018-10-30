@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "Persona.h"
 
 
@@ -12,6 +13,8 @@ int main()
     FILE * pFile;
 
     pFile = fopen ("MOCK_DATA.csv", "r");
+
+    fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, name, lastName,isEmpty);
 
     while(cont <10)
     {

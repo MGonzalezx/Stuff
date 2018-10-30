@@ -17,12 +17,23 @@
      9. Guardar los datos de los empleados en el archivo data.csv (modo binario).
     10. Salir
 *****************************************************/
-
+typedef struct
+{
+    int numero;
+    char letra;
+}eDato;
 
 int main()
 {
     int option = 0;
-    LinkedList* listaEmpleados = ll_newLinkedList();
+
+    eDato* miLista;
+
+    miLista = ll_newLinkedList();
+
+
+
+    /*LinkedList* listaEmpleados = ll_newLinkedList();
     do{
         switch(option)
         {
@@ -30,6 +41,6 @@ int main()
                 controller_loadFromText("data.csv",listaEmpleados);
                 break;
         }
-    }while(option != 10);
+    }while(option != 10);*/
     return 0;
 }
