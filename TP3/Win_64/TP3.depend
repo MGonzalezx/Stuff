@@ -80,3 +80,36 @@
 
 1540899283 c:\users\alumno\desktop\nueva carpeta\stuff\tp3\win_64\controller.h
 
+1541206591 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1540855490 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\linkedlist.h
+
+1541202709 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\employee.h
+
+1541202833 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1540855490 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1541201678 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1540855490 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\controller.h
+

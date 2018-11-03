@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "LinkedList.h"
 #include "Employee.h"
+#define A 3
 
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
@@ -11,8 +12,16 @@
  * \return int
  *
  */
-int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
+int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
 {
+
+    FILE* data;
+    data = fopen (path, "r");
+    //Faltaria el get?
+    //fscanf(data, "%[^,],%[^,],%[^,],%[^\n]\n", id, name, lastName,isEmpty); Esto iria en parser?
+    fclose(data);
+
+
     return 1;
 }
 
@@ -23,8 +32,13 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
+int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
 {
+    FILE* data;
+    Employee dato;
+	data=fopen(path, "rb");
+    fread(&dato,sizeof(pArrayListEmployee),A,data);
+    fclose(data);
     return 1;
 }
 
@@ -95,7 +109,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
+int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
 {
     return 1;
 }
@@ -107,7 +121,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
+int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
 {
     return 1;
 }

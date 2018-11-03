@@ -3,6 +3,7 @@
 #include "LinkedList.h"
 #include "Controller.h"
 #include "Employee.h"
+#define A 3
 
 /****************************************************
     Menu:
@@ -17,30 +18,32 @@
      9. Guardar los datos de los empleados en el archivo data.csv (modo binario).
     10. Salir
 *****************************************************/
-typedef struct
-{
-    int numero;
-    char letra;
-}eDato;
 
 int main()
 {
     int option = 0;
 
-    eDato* miLista;
-
-    miLista = ll_newLinkedList();
-
-
-
-    /*LinkedList* listaEmpleados = ll_newLinkedList();
+    LinkedList* listaEmpleados = ll_newLinkedList();
     do{
+        printf("1. Cargar los datos de los empleados desde el archivo data.csv (modo texto).");
+        printf("\n2. Cargar los datos de los empleados desde el archivo data.csv (modo binario).");
+        printf("\n3. Alta de empleado");
+        printf("\n4. Modificar datos de empleado");
+        printf("\n5. Baja de empleado");
+        printf("\n6. Listar empleados");
+        printf("\n7. Ordenar empleados");
+        printf("\n8. Guardar los datos de los empleados en el archivo data.csv (modo texto).");
+        printf("\n9. Guardar los datos de los empleados en el archivo data.csv (modo binario).");
+        printf("\n10. Salir");
+        printf("\nIngrese una opcion: \n");
+        scanf("%d", &option);
+
         switch(option)
         {
             case 1:
                 controller_loadFromText("data.csv",listaEmpleados);
                 break;
         }
-    }while(option != 10);*/
+    }while(option != 10);
     return 0;
 }
