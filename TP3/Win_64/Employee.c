@@ -19,10 +19,10 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
     empleado = employee_new();
     if(empleado != NULL)
     {
-        empleado ->id = idStr;
+        empleado ->id = atoi(idStr);
         strcpy(empleado ->nombre, nombreStr);
-        empleado ->horasTrabajadas = horasTrabajadasStr;
-        empleado ->sueldo = sueldoStr;
+        empleado ->horasTrabajadas = atoi(horasTrabajadasStr);
+        empleado ->sueldo = atoi(sueldoStr);
     }
     return empleado;
 }

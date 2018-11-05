@@ -35,6 +35,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../utn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../utn.h" />
 		<Unit filename="Controller.c">
 			<Option compilerVar="CC" />
 		</Unit>

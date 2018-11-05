@@ -3,7 +3,7 @@
 #include "LinkedList.h"
 #include "Controller.h"
 #include "Employee.h"
-#define A 3
+
 
 /****************************************************
     Menu:
@@ -24,7 +24,8 @@ int main()
     int option = 0;
 
     LinkedList* listaEmpleados = ll_newLinkedList();
-    do{
+    do
+    {
         printf("1. Cargar los datos de los empleados desde el archivo data.csv (modo texto).");
         printf("\n2. Cargar los datos de los empleados desde el archivo data.csv (modo binario).");
         printf("\n3. Alta de empleado");
@@ -40,10 +41,36 @@ int main()
 
         switch(option)
         {
-            case 1:
-                controller_loadFromText("data.csv",listaEmpleados);
-                break;
+        case 1:
+            controller_loadFromText("data.csv",listaEmpleados);
+            break;
+        case 2:
+
+            break;
+        case 3:
+            //ll_add();
+            break;
+        case 4:
+            controller_loadFromText("data.csv",listaEmpleados);
+            break;
+        case 5:
+            //ll_remove();
+            break;
+        case 6:
+            controller_ListEmployee(listaEmpleados);
+            break;
+        case 7:
+            controller_loadFromText("data.csv",listaEmpleados);
+            break;
+        case 8:
+            controller_loadFromText("data.csv",listaEmpleados);
+            break;
+        case 9:
+            controller_loadFromText("data.csv",listaEmpleados);
+            break;
+
         }
-    }while(option != 10);
+    }
+    while(option != 10);
     return 0;
 }

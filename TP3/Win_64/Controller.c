@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include "LinkedList.h"
 #include "Employee.h"
-#define A 3
+
+
+
 
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
@@ -17,10 +19,11 @@ int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
 
     FILE* data;
     data = fopen (path, "r");
-    //Faltaria el get?
-    //fscanf(data, "%[^,],%[^,],%[^,],%[^\n]\n", id, name, lastName,isEmpty); Esto iria en parser?
     fclose(data);
 
+    printf("|-----------------------------------------|\n"
+           "   Su archivo a sido cargado exitosamente!\n"
+           "|-----------------------------------------|\n\n");
 
     return 1;
 }
@@ -34,11 +37,7 @@ int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
  */
 int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
 {
-    FILE* data;
-    Employee dato;
-	data=fopen(path, "rb");
-    fread(&dato,sizeof(pArrayListEmployee),A,data);
-    fclose(data);
+
     return 1;
 }
 
@@ -87,6 +86,16 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
+
+   int i;
+    Employee lista[10];
+    for(i=0; i<10; i++)
+    {
+        printf("%d--%s--%d--%d\n", lista[i].id, lista[i].nombre, lista[i].horasTrabajadas, lista[i].sueldo);
+    }
+
+
+
     return 1;
 }
 
