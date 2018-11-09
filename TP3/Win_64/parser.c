@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "LinkedList.h"
 #include "Employee.h"
+#include "Controller.h"
 
 
 /** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo texto).
@@ -16,31 +17,24 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
     char id[500], nombre[128], horasTrabajadas[500],sueldo[500];
 
     int cont=0;
-    Employee lista[10];
 
-    FILE * data;
+    fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas,sueldo);
 
-    data = fopen ("data.csv", "r");
-
-    fscanf(data, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas,sueldo);
-
-    while(cont <10)
+    while(cont < 10)
     {
 
-
-
-
-        fscanf(data, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas,sueldo);
-
+        fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas,sueldo);
+    //printf("%d %s %d %d", atoi(id), nombre, atoi(horasTrabajadas), atoi(sueldo));
         Employee* e = employee_new(atoi(id), nombre, atoi(horasTrabajadas), atoi(sueldo));
 
+        ll_add(pArrayListEmployee, e);
 
-        lista[cont] = *e;
+        printf("%s",e->nombre);
         cont++;
 
     }
 
-    fclose(data);
+
 
     return 1;
 }

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "LinkedList.h"
 #include "Employee.h"
+#include "parser.h"
 
 
 
@@ -19,6 +20,9 @@ int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
 
     FILE* data;
     data = fopen (path, "r");
+    parser_EmployeeFromText(data,pArrayListEmployee);
+
+
     fclose(data);
 
     printf("|-----------------------------------------|\n"
@@ -87,11 +91,15 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
 
+
    int i;
-    Employee lista[10];
+
     for(i=0; i<10; i++)
     {
-        printf("%d--%s--%d--%d\n", lista[i].id, lista[i].nombre, lista[i].horasTrabajadas, lista[i].sueldo);
+        Employee* empleado = ll_get(pArrayListEmployee, i);
+        printf("Pase por aca");
+        printf("%d--%s--%d--%d\n", empleado->id, empleado->nombre, empleado->horasTrabajadas, empleado->sueldo);
+
     }
 
 
