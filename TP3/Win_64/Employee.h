@@ -8,6 +8,11 @@ typedef struct
     int sueldo;
 }Employee;
 
+static int ultimoIdEmployee = 0;
+void cargarMaximoId(int id);
+
+
+
 Employee* employee_new();
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr, char* sueldoStr);
 void employee_delete();
@@ -23,5 +28,6 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas);
 
 int employee_setSueldo(Employee* this,int sueldo);
 int employee_getSueldo(Employee* this,int* sueldo);
+int ultimoID();
 
 #endif // employee_H_INCLUDED
