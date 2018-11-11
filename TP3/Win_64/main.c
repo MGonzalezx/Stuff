@@ -22,10 +22,17 @@
 int main()
 {
     int option = 0;
+    int archivoCargado = 0;
 
     LinkedList* listaEmpleados = ll_newLinkedList();
+    printf("                            ---------------------\n"
+           "                              ***BIENVENIDO***\n"
+           "                            ---------------------\n");
+
     do
     {
+
+
         printf("1. Cargar los datos de los empleados desde el archivo data.csv (modo texto).");
         printf("\n2. Cargar los datos de los empleados desde el archivo data.csv (modo binario).");
         printf("\n3. Alta de empleado");
@@ -42,32 +49,94 @@ int main()
         switch(option)
         {
         case 1:
-            controller_loadFromText("data.csv",listaEmpleados);
+            if(archivoCargado == 0)
+            {
+                controller_loadFromText("data.csv",listaEmpleados);
+                archivoCargado = 1;
+            }
+            else
+            {
+                printf("|-----------------------------------------|\n"
+                       "     Usted ya a cargado el archivo!!\n"
+                       "|-----------------------------------------|\n\n");
+            }
             break;
         case 2:
 
             break;
         case 3:
-            controller_addEmployee(listaEmpleados);
+            if(archivoCargado == 1)
+            {
+                controller_addEmployee(listaEmpleados);
+            }
+            else
+            {
+                 printf("|-----------------------------------------|\n"
+                       "   Por favor, cargue un archivo primero!!\n"
+                       "|-----------------------------------------|\n\n");
+            }
             break;
         case 4:
-            controller_editEmployee(listaEmpleados);
+            if(archivoCargado == 1)
+            {
+                controller_editEmployee(listaEmpleados);
+            }
+            else
+            {
+                printf("|-----------------------------------------|\n"
+                       "   Por favor, cargue un archivo primero!!\n"
+                       "|-----------------------------------------|\n\n");
+            }
             break;
         case 5:
-            //ll_remove();
+            if(archivoCargado == 1)
+            {
+                controller_removeEmployee(listaEmpleados);
+            }
+            else
+            {
+                printf("|-----------------------------------------|\n"
+                       "   Por favor, cargue un archivo primero!!\n"
+                       "|-----------------------------------------|\n\n");
+            }
             break;
         case 6:
-            controller_ListEmployee(listaEmpleados);
+            if(archivoCargado == 1)
+            {
+                controller_ListEmployee(listaEmpleados);
+            }
+            else
+            {
+                printf("|-----------------------------------------|\n"
+                       "   Por favor, cargue un archivo primero!!\n"
+                       "|-----------------------------------------|\n\n");
+            }
             break;
         case 7:
-            controller_loadFromText("data.csv",listaEmpleados);
+            if(archivoCargado == 1)
+            {
+                controller_sortEmployee(listaEmpleados);
+            }
+            else
+            {
+                printf("|-----------------------------------------|\n"
+                       "   Por favor, cargue un archivo primero!!\n"
+                       "|-----------------------------------------|\n\n");
+            }
             break;
         case 8:
-            controller_loadFromText("data.csv",listaEmpleados);
+            controller_saveAsText("otraData.csv", listaEmpleados);
             break;
         case 9:
-            controller_loadFromText("data.csv",listaEmpleados);
+            controller_saveAsBinary("otraData.bin", listaEmpleados);
             break;
+        case 10:
+             printf("                         ---------------------------\n"
+           "                           ***TENGA UN BUEN DIA***\n"
+           "                         ---------------------------\n");
+            break;
+        default:
+            printf("Opcion incorrecta, por favor elejir teclas del 1 al 9 \n\n");
 
         }
     }

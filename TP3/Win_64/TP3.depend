@@ -90,18 +90,22 @@
 
 1541855019 c:\users\alumno\desktop\nueva carpeta\stuff\tp3\win_64\controller.h
 
-1541722976 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\controller.c
+1541901715 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\controller.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
 	"LinkedList.h"
 	"Employee.h"
 	"parser.h"
+	"utn.h"
 
 1540855490 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\linkedlist.h
 
-1541202709 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\employee.h
+1541894136 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\employee.h
 
-1541531795 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\employee.c
+1541898478 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\employee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -109,21 +113,21 @@
 	"Controller.h"
 	"Employee.h"
 
-1541724022 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\parser.c
+1541875827 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
 	"Controller.h"
 
-1541531795 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\main.c
+1541897801 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Controller.h"
 	"Employee.h"
 
-1540855490 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\controller.h
+1541884137 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\controller.h
 
 1541851487 source:c:\users\alumno\desktop\nueva carpeta\stuff\utn.c
 	<stdio.h>
@@ -155,4 +159,13 @@
 	"utn.h"
 
 1541851487 c:\users\alumno\desktop\nueva carpeta\stuff\tp3\win_64\utn.h
+
+1541875827 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1541875827 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\utn.h
 

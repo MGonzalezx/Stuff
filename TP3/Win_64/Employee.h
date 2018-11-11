@@ -29,5 +29,10 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas);
 int employee_setSueldo(Employee* this,int sueldo);
 int employee_getSueldo(Employee* this,int* sueldo);
 int ultimoID();
+///VISTO EN CLASE Y CLASES DE APOYO
+int comparar_ID(void* this, void* thisDos);
+int comparar_Nombre(void* this, void* thisDos);
+int comparar_HorasTrabajadas(void* this, void* thisDos);
+int comparar_Sueldo(void* this, void* thisDos);
 
 #endif // employee_H_INCLUDED
