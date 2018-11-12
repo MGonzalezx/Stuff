@@ -54,9 +54,15 @@ int ll_len(LinkedList* this)
 static Node* getNode(LinkedList* this, int nodeIndex)
 {
     Node* pNode = NULL ;
-    if( pNode != NULL || nodeIndex > 0 || nodeIndex < ll_len(this))
+    if(this != NULL || nodeIndex > 0 || nodeIndex < ll_len(this))
     {
-        pNode = this -> pFirstNode ->pNextNode ->pElement ;
+        while ( this-> size != nodeIndex)
+        {
+            pNode = this->pFirstNode->pNextNode->pElement;
+
+        }
+
+
     }
     return pNode;
 }
@@ -71,6 +77,7 @@ static Node* getNode(LinkedList* this, int nodeIndex)
  */
 Node* test_getNode(LinkedList* this, int nodeIndex)
 {
+
     return getNode(this, nodeIndex);
 }
 
