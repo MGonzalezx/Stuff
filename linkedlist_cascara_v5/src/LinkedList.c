@@ -53,16 +53,23 @@ int ll_len(LinkedList* this)
  */
 static Node* getNode(LinkedList* this, int nodeIndex)
 {
+    int i;
+    Node* aNode;
     Node* pNode = NULL ;
 
-    if(this != NULL || nodeIndex > 0 || nodeIndex < ll_len(this))
+    if(this != NULL && nodeIndex >= 0 && nodeIndex < ll_len(this))
     {
-        int i;
-        Node* aNode;
         aNode = this->pFirstNode;
-        for(i=0; i<nodeIndex; i++)
+        for(i=0; i< ll_len(this); i++)
         {
-            aNode = aNode->pNextNode;
+            if(nodeIndex == i)
+            {
+                break;
+            }
+            else
+            {
+                aNode = aNode->pNextNode;
+            }
         }
 
         pNode = aNode;
@@ -97,8 +104,34 @@ Node* test_getNode(LinkedList* this, int nodeIndex)
 static int addNode(LinkedList* this, int nodeIndex,void* pElement)
 {
     int returnAux = -1;
+    Node* nuevoNode = (Node*) malloc(sizeof(Node));
+    Node* nodeViejo = NULL;
+    Node* nodeSiguiente = NULL;
+
+    if(this != NULL && nodeIndex >= 0 && nodeIndex <= ll_len(this))
+    {
+        returnAux = 0;
+
+        if(nodeIndex == 0)
+        {
+            nodeSiguiente = getNode(this, nodeIndex);
+            nuevoNode->pNextNode = nodeSiguiente;
+            this->pFirstNode = nuevoNode;
+        }
+        else
+        {
+            nodeSiguiente = getNode(this, nodeIndex);
+            nuevoNode->pNextNode = nodeSiguiente;
+            nodeViejo = getNode(this, nodeIndex-1);
+            nodeViejo->pNextNode = nuevoNode;
+        }
+
+        nuevoNode->pElement = pElement;
+        this->size = this->size + 1;
+    }
 
     return returnAux;
+
 }
 
 
@@ -127,6 +160,21 @@ int test_addNode(LinkedList* this, int nodeIndex,void* pElement)
 int ll_add(LinkedList* this, void* pElement)
 {
     int returnAux = -1;
+    if(this != NULL)
+    {
+        int longitud;
+        longitud = ll_len(this);
+
+        int elementoNuevo;
+        //REGRESA -1 O 0
+        elementoNuevo = addNode(this, longitud, pElement);
+        //SI REGRESA 0 ESTA BIEN
+        if(elementoNuevo == 0)
+        {
+            returnAux = 0;
+        }
+
+    }
 
     return returnAux;
 }
@@ -142,6 +190,14 @@ int ll_add(LinkedList* this, void* pElement)
 void* ll_get(LinkedList* this, int index)
 {
     void* returnAux = NULL;
+    Node* pNode = NULL;
+    if(this != NULL && index >= 0 && index < ll_len(this))
+    {
+        //Obtenemos el nodo que estamos buscando
+        pNode = getNode(this, index);
+        //Se lo asignamos a returnAux por que devuelve el node si esta correctamente
+        returnAux = pNode ->pElement;
+    }
 
     return returnAux;
 }
@@ -159,6 +215,15 @@ void* ll_get(LinkedList* this, int index)
 int ll_set(LinkedList* this, int index,void* pElement)
 {
     int returnAux = -1;
+    Node* pNode = NULL;
+    if(this != NULL && index >= 0 && index < ll_len(this))
+    {
+        //Obtenemos el elemento que queremos modificar
+        pNode = getNode(this, index);
+        //Asignamos el elemento obtenido a pElement. Cambiamos pElement
+        pNode ->pElement = pElement;
+        returnAux = 0;
+    }
 
     return returnAux;
 }
@@ -175,6 +240,40 @@ int ll_set(LinkedList* this, int index,void* pElement)
 int ll_remove(LinkedList* this,int index)
 {
     int returnAux = -1;
+    Node* pNode = NULL;
+    Node* pNodeAnterior = NULL;
+    Node* pNodeSiguiente = NULL;
+    if(this != NULL && index >= 0 && index < ll_len(this))
+    {   //El indice que va a ser borrado
+        pNode = getNode(this, index);
+
+        //Como en el addNode recorremos en los casos que pueda acurrir esto.
+        //En el caso que el elemento esté en el indice 0
+        if(index == 0)
+        {
+            //Conseguimos en elemento siguiente al que vamos a borrar.
+            pNodeSiguiente = getNode(this, index+1);
+            //Le asignamos el firstNode al node siguiente ya que el primero no esta más.
+            this->pFirstNode = pNodeSiguiente;
+        }
+        //En el caso que el elemento este en el medio de otros dos
+        else
+        {
+            //Llamamos a los dos elementos, el anterior y siguiente al elemento que vamos a borrar
+            pNodeAnterior = getNode(this, index-1);
+            pNodeSiguiente = getNode(this, index+1);
+            //Los unimos ya que el del medio fue eliminado,
+            pNodeAnterior->pNextNode = pNodeSiguiente;
+
+
+        }
+        //Se libera el espacio de pNode
+        free(pNode);
+        //Se achica el size, ya que un elemento fue eliminado
+        this->size = this->size - 1;
+        returnAux = 0;
+
+    }
 
     return returnAux;
 }
@@ -190,6 +289,27 @@ int ll_remove(LinkedList* this,int index)
 int ll_clear(LinkedList* this)
 {
     int returnAux = -1;
+    int longitud;
+    int i;
+    int remove;
+    if(this != NULL)
+    {
+        //Primero consigo la longitud de la lista.
+        longitud = ll_len(this);
+        for(i = 0; i<longitud; i++)
+        {
+            //Por cada i con un limite que es la longitud de la lista, va a borrar los elementos
+            remove = ll_remove(this, i);
+            //Lo que devuelve remove es 0 o -1. Si no devuelve 0, significa que hubo un error,
+            //Osea que en este caso nos genera un error
+            if(remove != 0)
+            {
+                returnAux = -1;
+            }
+        }
+
+        returnAux = 0;
+    }
 
     return returnAux;
 }
@@ -205,6 +325,18 @@ int ll_clear(LinkedList* this)
 int ll_deleteLinkedList(LinkedList* this)
 {
     int returnAux = -1;
+    int borrar;
+    if(this != NULL)
+    {
+        //Borramos todos los elementos de la lista
+        borrar = ll_clear(this);
+        //Si borramos exitosamente todos los elementos, entonces continuamos a borrar la lista.
+        if(borrar == 0)
+        {
+            free(this);
+            returnAux = 0;
+        }
+    }
 
     return returnAux;
 }
