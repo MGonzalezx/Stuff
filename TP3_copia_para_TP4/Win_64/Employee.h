@@ -34,5 +34,8 @@ int comparar_ID(void* this, void* thisDos);
 int comparar_Nombre(void* this, void* thisDos);
 int comparar_HorasTrabajadas(void* this, void* thisDos);
 int comparar_Sueldo(void* this, void* thisDos);
+int filtrar_Sueldo_Menor_15000(void* employeeVoid);
+int filtrar_Nombres_Inician_Con_A(void* employeeVoid);
+int filtrar_Horas_Trabajadas(void* employeeVoid);
 
 #endif // employee_H_INCLUDED

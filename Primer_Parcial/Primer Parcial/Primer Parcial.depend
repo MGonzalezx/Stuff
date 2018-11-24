@@ -127,3 +127,56 @@
 	<string.h>
 	"utn.h"
 
+1543072894 source:d:\nueva carpeta\stuff\primer_parcial\primer parcial\directores.c
+	<stdio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"utn.h"
+	"Directores.h"
+
+1543062121 d:\nueva carpeta\stuff\primer_parcial\primer parcial\utn.h
+
+1543074417 d:\nueva carpeta\stuff\primer_parcial\primer parcial\directores.h
+	"Peliculas.h"
+
+1543072214 source:d:\nueva carpeta\stuff\primer_parcial\primer parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"MenuDeOpciones.h"
+
+1543062121 d:\nueva carpeta\stuff\primer_parcial\primer parcial\peliculas.h
+
+1543062121 d:\nueva carpeta\stuff\primer_parcial\primer parcial\menudeopciones.h
+
+1543072272 source:d:\nueva carpeta\stuff\primer_parcial\primer parcial\menudeopciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Directores.h"
+	"MenuDeOpciones.h"
+
+1543072710 source:d:\nueva carpeta\stuff\primer_parcial\primer parcial\peliculas.c
+	<stdio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"utn.h"
+	"Peliculas.h"
+
+1543062121 source:d:\nueva carpeta\stuff\primer_parcial\primer parcial\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+

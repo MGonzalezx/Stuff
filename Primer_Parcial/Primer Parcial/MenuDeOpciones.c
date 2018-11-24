@@ -3,7 +3,6 @@
 #include <string.h>
 #include <ctype.h>
 #include <conio.h>
-#include "Peliculas.h"
 #include "Directores.h"
 #include "MenuDeOpciones.h"
 #define CANTIDADPELICULAS 2
@@ -71,10 +70,11 @@ void menuDeOpciones()
             darDeBajaDirector(listadoMainDirectores, CANTIDADDIRECTORES);
             break;
         case 6:
-            printf("PELICULAS: \nID    Titulo         Anio    Nacionalidad   IDDirector\n");
+            /*printf("PELICULAS: \nID    Titulo         Anio    Nacionalidad   IDDirector\n");
             listadoPelicula(listadoMainPelicula, CANTIDADPELICULAS);
             printf("\nDIRECTORES: \nID    Nombre         Fecha de Nacimiento    Nacionalidad\n");
-            listadoDirectores(listadoMainDirectores, CANTIDADDIRECTORES);
+            listadoDirectores(listadoMainDirectores, CANTIDADDIRECTORES);*/
+            peliculas_Con_Director(listadoMainPelicula, listadoMainDirectores, CANTIDADPELICULAS, CANTIDADDIRECTORES);
             break;
 
         }

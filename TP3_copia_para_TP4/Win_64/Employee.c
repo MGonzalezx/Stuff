@@ -19,7 +19,7 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
     empleado = employee_new();
     if(idStr != NULL && nombreStr != NULL && horasTrabajadasStr != NULL && sueldoStr != NULL)
     {
-    if(empleado != NULL)
+        if(empleado != NULL)
         {
             empleado ->id = atoi(idStr);
             strcpy(empleado ->nombre, nombreStr);
@@ -227,4 +227,49 @@ int comparar_Nombre(void* primerNombre, void* segundoNombre)
     }
     return retornar;
 
+}
+
+/// LinkedList* ll_filter(LinkedList* this,  --->  int (*pFunc)(void*) <-----)
+int filtrar_Sueldo_Menor_15000(void* employeeVoid)
+{
+    int retorno = 0;
+    Employee* employee = NULL;
+
+    if(employeeVoid != NULL)
+    {
+        employee = (Employee*)employeeVoid;
+        if(employee->sueldo < 15000)
+        {
+            retorno = 1;
+        }
+    }
+    return retorno;
+}
+int filtrar_Nombres_Inician_Con_A(void* employeeVoid)
+{
+    int retorno = 0;
+    Employee* employee = NULL;
+    if(employeeVoid != NULL)
+    {
+        employee = (Employee*)employeeVoid;
+        if(strncmp(employee->nombre,"A",1)== 0)
+        {
+            retorno = 1;
+        }
+    }
+    return retorno;
+}
+int filtrar_Horas_Trabajadas(void* employeeVoid)
+{
+    int retorno = 0;
+    Employee* employee = NULL;
+    if(employeeVoid != NULL)
+    {
+        employee = (Employee*)employeeVoid;
+        if(employee->horasTrabajadas < 100)
+        {
+            retorno = 1;
+        }
+    }
+    return retorno;
 }

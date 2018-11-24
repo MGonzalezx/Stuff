@@ -7,6 +7,7 @@
 #include "utn.h"
 #include "Directores.h"
 
+
 static int ultimoID()
 {
     static int id = 0;
@@ -69,13 +70,12 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
         printf("\nIngrese Nombre: ");
         fflush(stdin);
         gets(buffer);
-        int i = 0;
-        while(strlen(buffer)>20)
+        while(strlen(buffer)>20 || !esSoloLetras(buffer) ||
+              nombre_Repetido(listado, CANTIDADDIRECTORES, buffer))
         {
             printf("Reingrese Nombre: ");
             fflush(stdin);
             gets(buffer);
-            i++;
         }
         strcpy(miDirector.nombre, buffer);
 
@@ -199,3 +199,40 @@ void darDeBajaDirector(eDirector listado[], int cantidad)
     }
 }
 
+void peliculas_Con_Director(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD)
+{
+    int i;
+    int j;
+    printf("%15s %15s\n", "Titulo", "Director");
+    for(i = 0; i<lenP; i++)
+    {
+        if(listaPelicula[i].estado == isActive)
+        {
+
+            for(j = 0; j<lenD; i++)
+            {
+                if(listaPelicula[i].idDirector == listaDirector[j].id)
+                {
+                    printf("%15s %15s\n", listaPelicula[i].titulo, listaDirector[j].nombre);
+                    break;
+                }
+            }
+        }
+    }
+}
+
+int nombre_Repetido(eDirector* miDirector, int lenD, char* nombre)
+{
+    int retorno = 0;
+    int i;
+    for(i = 0; i < lenD; i++)
+    {
+        if(strcmp(miDirector[i].nombre, nombre )== 0)
+        {
+            printf("Nombre ya ingresado, por favor ingrese otro: ");
+            retorno = 1;
+            break;
+        }
+    }
+    return retorno;
+}

@@ -642,3 +642,31 @@ int ll_sort(LinkedList* this, int (*pFunc)(void*,void*), int order)
 
 }
 
+/** \brief
+ *
+ * \param
+ * \param pFunc (*pFunc) Puntero a la funcion criterio, debe retornar 1 si se agrega el elemento y 0 si no.
+ * \return
+ *
+ */
+
+LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*))
+{
+    LinkedList* cloneArray = NULL;
+    int index;
+    void* auxiliar = NULL;
+
+    if(this != NULL && ll_len(this) > 1 && pFunc != NULL)
+    {
+        cloneArray = ll_newLinkedList();
+        for(index=0; index < ll_len(this); index++)
+        {
+            auxiliar = ll_get(this, index);
+            if(pFunc(auxiliar)==1)
+            {
+                ll_add(cloneArray, auxiliar);
+            }
+        }
+    }
+    return cloneArray;
+}

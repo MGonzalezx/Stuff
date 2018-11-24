@@ -1,6 +1,7 @@
 #define CANTIDADDIRECTORES 2
 #define isActive 0
 #define isEmpty 1
+#include "Peliculas.h"
 
 typedef struct
 {
@@ -72,4 +73,6 @@ int listadoDirectores(eDirector listado[],int);
 
 void darDeBajaDirector(eDirector listado[], int cantidad);
 
+void peliculas_Con_Director(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD);
 
+int nombre_Repetido(eDirector* miDirector, int lenD, char* nombre);

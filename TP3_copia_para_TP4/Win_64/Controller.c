@@ -365,7 +365,8 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
         int i;
 
         for(i=0; i<ll_len(pArrayListEmployee); i++)
-        {printf("%s  %14s  %16s  %6s\n", "Id", "Nombre", "Horas trabajadas", "Sueldo");
+        {
+            printf("%s  %14s  %16s  %6s\n", "Id", "Nombre", "Horas trabajadas", "Sueldo");
             Employee* empleado = (Employee*)ll_get(pArrayListEmployee, i);
             printf("%d         %s        %d         %d\n", empleado->id, empleado->nombre, empleado->horasTrabajadas, empleado->sueldo);
 
@@ -487,8 +488,8 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
         }
         fclose(pFile);
         printf("-----------------------------------------------------------\n"
-                   "      El archivo fue guardado exitosamente\n"
-                   "-----------------------------------------------------------\n\n");
+               "      El archivo fue guardado exitosamente\n"
+               "-----------------------------------------------------------\n\n");
     }
     return 1;
 }
@@ -518,10 +519,44 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
         }
         fclose(pFile);
         printf("-----------------------------------------------------------\n"
-                   "      El archivo fue guardado exitosamente\n"
-                   "-----------------------------------------------------------\n\n");
+               "      El archivo fue guardado exitosamente\n"
+               "-----------------------------------------------------------\n\n");
     }
 
 
+    return 1;
+}
+int controller_filtrarSueldo(LinkedList* pArrayListEmployee)
+{
+    if(pArrayListEmployee != NULL)
+    {
+        printf("---¡Cargando!---");
+        LinkedList* listaFiltrada = ll_filter(pArrayListEmployee, filtrar_Sueldo_Menor_15000);
+        printf("\nSu lista fue filtrada con sueldos menores a 15000!!\n\n");
+        controller_ListEmployee(listaFiltrada);
+    }
+    return 1;
+}
+int controller_filtrarNombre(LinkedList* pArrayListEmployee)
+{
+    if(pArrayListEmployee != NULL)
+    {
+        printf("---¡Cargando!---");
+        LinkedList* listaFiltrada = ll_filter(pArrayListEmployee, filtrar_Nombres_Inician_Con_A);
+        printf("\nSu lista fue filtrada con nombres que inician con A!!\n\n");
+        controller_ListEmployee(listaFiltrada);
+    }
+    return 1;
+}
+
+int controller_filtrarHoras(LinkedList* pArrayListEmployee)
+{
+    if(pArrayListEmployee != NULL)
+    {
+        printf("---¡Cargando!---");
+        LinkedList* listaFiltrada = ll_filter(pArrayListEmployee, filtrar_Horas_Trabajadas);
+        printf("\nSu lista fue filtrada con horas menores a 100!!\n\n");
+        controller_ListEmployee(listaFiltrada);
+    }
     return 1;
 }

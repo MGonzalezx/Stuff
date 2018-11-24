@@ -36,9 +36,8 @@ int buscarLibrePelicula(ePelicula listado[],int cantidad)
 
 int cargarDatosPelicula(ePelicula listado[], int cantidad)
 {
-
-
     int index = buscarLibrePelicula(listado, cantidad);
+    int anioCorrecto = 0;
 
     getchar();
     if(index >=0)
@@ -63,11 +62,27 @@ int cargarDatosPelicula(ePelicula listado[], int cantidad)
         strcpy(miPelicula.titulo, buffer);
 
         printf("Ingrese Anio: ");
-        scanf("%d", &miPelicula.anio);
-        while(miPelicula.anio < 1900 || miPelicula.anio > 2018)
+
+        while(!anioCorrecto)
         {
-            printf("Error! Ingresar anio entre 1900 y 2018: ");
-            scanf("%d", &miPelicula.anio);
+            fflush(stdin);
+            gets(buffer);
+            if(esNumerico(buffer))
+            {
+                miPelicula.anio = atoi(buffer);
+                if (miPelicula.anio < 1900 || miPelicula.anio > 2018)
+                {
+                    printf("Error! Ingresar anio entre 1900 y 2018: ");
+                }
+                else
+                {
+                    anioCorrecto = 1;
+                }
+            }
+            else
+            {
+                printf("Error! Ingresar anio Numerico: ");
+            }
         }
         printf("Ingrese Nacionalidad: ");
         fflush(stdin);
@@ -148,6 +163,8 @@ int inicializarPelicula( ePelicula listado[],int cantidad)
 
 void modificarUnaPelicula(ePelicula listado[], int cantidad)
 {
+    ePelicula miPelicula;
+    char buffer[1024];
     char titulo[20];
     int anio;
     char nacionalidad[30];
@@ -156,6 +173,7 @@ void modificarUnaPelicula(ePelicula listado[], int cantidad)
     char opcion;
     int i;
     int flag = 0;
+    int anioCorrecto = 0;
     printf("Ingrese un ID de Pelicula a buscar: ");
     scanf("%d", &identificador);
 
@@ -185,7 +203,15 @@ void modificarUnaPelicula(ePelicula listado[], int cantidad)
                 {
                 case 'a':
                     printf("\nIngrese el nuevo titulo: ");
-                    scanf("%s", titulo);
+                    fflush(stdin);
+                    gets(buffer);
+                    while(strlen(buffer)>20)
+                    {
+                        printf("Reingrese Titulo: ");
+                        fflush(stdin);
+                        gets(buffer);
+                    }
+                    strcpy(miPelicula.titulo, buffer);
 
                     printf("¿Esta seguro que desea modificar el titulo? s=si n=no\n ");
                     opcion=getche();
@@ -201,18 +227,26 @@ void modificarUnaPelicula(ePelicula listado[], int cantidad)
                     break;
                 case 'b':
                     printf("\nIngrese el nuevo anio: ");
-                    scanf("%d", &anio);
-
-                    printf("¿Esta seguro que desea modificar el anio? s=si n=no\n ");
-                    opcion=getche();
-                    if(opcion=='s')
+                    while(!anioCorrecto)
                     {
-                        listado[i].anio = anio ;
-                        printf("\nAnio modificado\n");
-                    }
-                    else if(opcion=='n')
-                    {
-                        printf("El anio no fue modificado!!\n");
+                        fflush(stdin);
+                        gets(buffer);
+                        if(esNumerico(buffer))
+                        {
+                            miPelicula.anio = atoi(buffer);
+                            if (miPelicula.anio < 1900 || miPelicula.anio > 2018)
+                            {
+                                printf("Error! Ingresar anio entre 1900 y 2018: ");
+                            }
+                            else
+                            {
+                                anioCorrecto = 1;
+                            }
+                        }
+                        else
+                        {
+                            printf("Error! Ingresar anio Numerico: ");
+                        }
                     }
                     break;
                 case 'c':

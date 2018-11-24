@@ -169,7 +169,7 @@
 
 1541875827 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3\win_64\utn.h
 
-1542714250 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\controller.c
+1543066598 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -180,15 +180,15 @@
 	"parser.h"
 	"utn.h"
 
-1542714250 c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\linkedlist.h
+1543062857 c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\linkedlist.h
 
-1542714250 c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\employee.h
+1543065286 c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\employee.h
 
-1542714250 c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\parser.h
+1543062121 c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\parser.h
 
-1542714250 c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\utn.h
+1543062121 c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\utn.h
 
-1542714250 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\employee.c
+1543066943 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\employee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -196,32 +196,88 @@
 	"Controller.h"
 	"Employee.h"
 
-1542714250 c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\controller.h
+1543065745 c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\controller.h
 
-1542714250 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\main.c
+1543066546 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Controller.h"
 	"Employee.h"
 
-1542714250 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\parser.c
+1543062121 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
 	"Controller.h"
 
-1542714250 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\utn.c
+1543062121 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 	"utn.h"
 
-1542718128 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\linkedlist.c
+1543066856 source:c:\users\alumno\desktop\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"LinkedList.h"
+
+1543069556 source:d:\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"utn.h"
+
+1543062857 d:\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\linkedlist.h
+
+1543069478 d:\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\employee.h
+
+1543062121 d:\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\parser.h
+
+1543062121 d:\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\utn.h
+
+1543069478 source:d:\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1543069556 d:\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\controller.h
+
+1543068237 source:d:\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1543069598 source:d:\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1543062121 source:d:\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"Controller.h"
+
+1543062121 source:d:\nueva carpeta\stuff\tp3_copia_para_tp4\win_64\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
 

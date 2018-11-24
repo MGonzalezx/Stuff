@@ -3,8 +3,6 @@
 #include <string.h>
 #include <ctype.h>
 #include <conio.h>
-#include "Peliculas.h"
-#include "Directores.h"
 #include "MenuDeOpciones.h"
 
 int main()

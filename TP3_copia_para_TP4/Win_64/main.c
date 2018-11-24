@@ -42,7 +42,10 @@ int main()
         printf("\n7. Ordenar empleados");
         printf("\n8. Guardar los datos de los empleados en el archivo data.csv (modo texto).");
         printf("\n9. Guardar los datos de los empleados en el archivo data.csv (modo binario).");
-        printf("\n10. Salir");
+        printf("\n10. Filtrar por sueldo.");
+        printf("\n11. Filtrar por Nombre.");
+        printf("\n12. Filtrar por Horas.");
+        printf("\n13. Salir");
         printf("\nIngrese una opcion: \n");
         scanf("%d", &option);
 
@@ -71,7 +74,7 @@ int main()
             }
             else
             {
-                 printf("|-----------------------------------------|\n"
+                printf("|-----------------------------------------|\n"
                        "   Por favor, cargue un archivo primero!!\n"
                        "|-----------------------------------------|\n\n");
             }
@@ -131,15 +134,24 @@ int main()
             controller_saveAsBinary("otraData.bin", listaEmpleados);
             break;
         case 10:
-             printf("                         ---------------------------\n"
-           "                           ***TENGA UN BUEN DIA***\n"
-           "                         ---------------------------\n");
+            controller_filtrarSueldo(listaEmpleados);
+            break;
+        case 11:
+            controller_filtrarNombre(listaEmpleados);
+            break;
+        case 12:
+            controller_filtrarHoras(listaEmpleados);
+            break;
+        case 13:
+            printf("                         ---------------------------\n"
+                   "                           ***TENGA UN BUEN DIA***\n"
+                   "                         ---------------------------\n");
             break;
         default:
-            printf("Opcion incorrecta, por favor elejir teclas del 1 al 9 \n\n");
+            printf("Opcion incorrecta, por favor elejir teclas del 1 al 13 \n\n");
 
         }
     }
-    while(option != 10);
+    while(option != 13);
     return 0;
 }
