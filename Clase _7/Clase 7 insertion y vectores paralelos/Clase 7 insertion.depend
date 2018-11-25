@@ -65,3 +65,34 @@
 	"MenoDeOpciones.h"
 	"FuncionesAlumnos.h"
 
+1540855490 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\clase _7\clase 7 insertion y vectores paralelos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"FuncionesAlumnos.h"
+	"MenoDeOpciones.h"
+
+1540855490 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\clase _7\clase 7 insertion y vectores paralelos\funcionesalumnos.h
+
+1540855490 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\clase _7\clase 7 insertion y vectores paralelos\menodeopciones.h
+
+1540855490 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\clase _7\clase 7 insertion y vectores paralelos\menodeopciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"MenoDeOpciones.h"
+	"FuncionesAlumnos.h"
+
+1543188536 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\clase _7\clase 7 insertion y vectores paralelos\funcionesalumnos.c
+	"FuncionesAlumnos.h"
+	"MenoDeOpciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+

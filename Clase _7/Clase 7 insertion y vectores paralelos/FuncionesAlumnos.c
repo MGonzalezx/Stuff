@@ -157,7 +157,7 @@ void nombresQueInicianConP(eAlumno listado[], int tam)
 
     for(i=0; i<tam; i++)
     {
-        if(strcmp(listado[1].nombre, "P")==0)
+        if(strncmp(listado[i].nombre, "P", 1)==0)
         {
             mostrartUnAlumno(listado[i]);
         }
