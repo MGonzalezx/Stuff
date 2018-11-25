@@ -38,6 +38,7 @@ int cargarDatosPelicula(ePelicula listado[], int cantidad)
 {
     int index = buscarLibrePelicula(listado, cantidad);
     int anioCorrecto = 0;
+    int idCorrecto = 0;
 
     getchar();
     if(index >=0)
@@ -97,16 +98,30 @@ int cargarDatosPelicula(ePelicula listado[], int cantidad)
         strcpy(miPelicula.nacionalidad, buffer);
 
         printf("Ingrese ID del director: ");
-
-        scanf("%d", &miPelicula.idDirector);
-
-
-        while(miPelicula.idDirector < 1 || miPelicula.idDirector > 500)
+        while (!idCorrecto)
         {
-            printf("Reingrese ID del director entre un valor de 1 y 500: ");
-            scanf("%d", &miPelicula.idDirector);
-        }
+            fflush(stdin);
+            gets(buffer);
 
+            if(esNumerico(buffer))
+            {
+
+                miPelicula.idDirector = atoi(buffer);
+                if(miPelicula.idDirector < 1 || miPelicula.idDirector > 500)
+                {
+                    printf("Reingrese ID del director entre un valor de 1 y 500: ");
+                }
+                else
+                {
+                    idCorrecto = 1;
+                }
+
+            }
+            else
+            {
+                printf("Error! Ingresar ID del director Numerico: ");
+            }
+        }
 
         miPelicula.estado = isActive;
         listado[index]= miPelicula;
@@ -166,14 +181,13 @@ void modificarUnaPelicula(ePelicula listado[], int cantidad)
     ePelicula miPelicula;
     char buffer[1024];
     char titulo[20];
-    int anio;
     char nacionalidad[30];
-    int idDirector;
     int identificador;
     char opcion;
     int i;
     int flag = 0;
     int anioCorrecto = 0;
+    int idCorrecto = 0;
     printf("Ingrese un ID de Pelicula a buscar: ");
     scanf("%d", &identificador);
 
@@ -248,6 +262,17 @@ void modificarUnaPelicula(ePelicula listado[], int cantidad)
                             printf("Error! Ingresar anio Numerico: ");
                         }
                     }
+                    printf("¿Esta seguro que desea modificar el anio? s=si n=no\n ");
+                    opcion=getche();
+                    if(opcion=='s')
+                    {
+                        listado[i].anio = miPelicula.anio;
+                        printf("\nEl anio fue modificado!!\n");
+                    }
+                    else if(opcion=='n')
+                    {
+                        printf("El anio no fue modificado!!\n");
+                    }
                     break;
                 case 'c':
                     printf("\nIngrese la nueva nacionalidad: ");
@@ -267,13 +292,36 @@ void modificarUnaPelicula(ePelicula listado[], int cantidad)
                     break;
                 case 'd':
                     printf("\nIngrese el nuevo ID del director: ");
-                    scanf("%d", &idDirector);
+                    while (!idCorrecto)
+                    {
+                        fflush(stdin);
+                        gets(buffer);
+
+                        if(esNumerico(buffer))
+                        {
+
+                            miPelicula.idDirector = atoi(buffer);
+                            if(miPelicula.idDirector < 1 || miPelicula.idDirector > 500)
+                            {
+                                printf("Reingrese ID del director entre un valor de 1 y 500: ");
+                            }
+                            else
+                            {
+                                idCorrecto = 1;
+                            }
+
+                        }
+                        else
+                        {
+                            printf("Error! Ingresar ID del director Numerico: ");
+                        }
+                    }
 
                     printf("¿Esta seguro que desea modificar el ID del director? s=si n=no\n ");
                     opcion=getche();
                     if(opcion=='s')
                     {
-                        listado[i].idDirector = idDirector;
+                        listado[i].idDirector = miPelicula.idDirector;
                         printf("\nID del director modificado!!\n");
                     }
                     else if(opcion=='n')

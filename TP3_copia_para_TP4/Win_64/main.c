@@ -134,13 +134,42 @@ int main()
             controller_saveAsBinary("otraData.bin", listaEmpleados);
             break;
         case 10:
-            controller_filtrarSueldo(listaEmpleados);
+            if(archivoCargado == 1)
+            {
+                controller_filtrarSueldo(listaEmpleados);
+            }
+            else
+            {
+                printf("|-----------------------------------------|\n"
+                       "   Por favor, cargue un archivo primero!!\n"
+                       "|-----------------------------------------|\n\n");
+            }
             break;
         case 11:
-            controller_filtrarNombre(listaEmpleados);
+            if(archivoCargado == 1)
+            {
+
+                controller_filtrarNombre(listaEmpleados);
+            }
+            else
+            {
+                printf("|-----------------------------------------|\n"
+                       "   Por favor, cargue un archivo primero!!\n"
+                       "|-----------------------------------------|\n\n");
+            }
             break;
         case 12:
-            controller_filtrarHoras(listaEmpleados);
+            if(archivoCargado == 1)
+            {
+
+                controller_filtrarHoras(listaEmpleados);
+            }
+            else
+            {
+                printf("|-----------------------------------------|\n"
+                       "   Por favor, cargue un archivo primero!!\n"
+                       "|-----------------------------------------|\n\n");
+            }
             break;
         case 13:
             printf("                         ---------------------------\n"

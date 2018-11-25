@@ -281,3 +281,59 @@
 	<string.h>
 	"utn.h"
 
+1543095456 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3_copia_para_tp4\win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"utn.h"
+
+1543095456 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3_copia_para_tp4\win_64\linkedlist.h
+
+1543095456 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3_copia_para_tp4\win_64\employee.h
+
+1543095456 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3_copia_para_tp4\win_64\parser.h
+
+1543095456 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3_copia_para_tp4\win_64\utn.h
+
+1543095456 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3_copia_para_tp4\win_64\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1543095456 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3_copia_para_tp4\win_64\controller.h
+
+1543095456 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3_copia_para_tp4\win_64\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1543187956 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3_copia_para_tp4\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1543095456 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3_copia_para_tp4\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"Controller.h"
+
+1543095456 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\tp3_copia_para_tp4\win_64\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+

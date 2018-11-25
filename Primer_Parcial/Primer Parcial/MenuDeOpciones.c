@@ -18,7 +18,7 @@ void menuDeOpciones()
 
 
     listadoMainPelicula[0].anio = 2008;
-    listadoMainPelicula[0].idDirector = 1;
+    listadoMainPelicula[0].idDirector = 0;
     listadoMainPelicula[0].identificador = 0;
     listadoMainPelicula[0].estado = isActive;
     strcpy(listadoMainPelicula[0].nacionalidad,"Peruano");
@@ -31,7 +31,7 @@ void menuDeOpciones()
     strcpy(listadoMainPelicula[1].nacionalidad,"argentino");
     strcpy(listadoMainPelicula[1].titulo,"El wachin 2");*/
 
-    listadoMainDirectores[0].id = 1;
+    listadoMainDirectores[0].id = 0;
     listadoMainDirectores[0].nacimiento.anio = 1900;
     listadoMainDirectores[0].nacimiento.mes = 3;
     listadoMainDirectores[0].nacimiento.dia = 2;
@@ -70,11 +70,11 @@ void menuDeOpciones()
             darDeBajaDirector(listadoMainDirectores, CANTIDADDIRECTORES);
             break;
         case 6:
-            /*printf("PELICULAS: \nID    Titulo         Anio    Nacionalidad   IDDirector\n");
+            printf("PELICULAS: \nID    Titulo         Anio    Nacionalidad   IDDirector\n");
             listadoPelicula(listadoMainPelicula, CANTIDADPELICULAS);
             printf("\nDIRECTORES: \nID    Nombre         Fecha de Nacimiento    Nacionalidad\n");
-            listadoDirectores(listadoMainDirectores, CANTIDADDIRECTORES);*/
-            peliculas_Con_Director(listadoMainPelicula, listadoMainDirectores, CANTIDADPELICULAS, CANTIDADDIRECTORES);
+            listadoDirectores(listadoMainDirectores, CANTIDADDIRECTORES);
+            //peliculas_Con_Director(listadoMainPelicula, listadoMainDirectores, CANTIDADPELICULAS, CANTIDADDIRECTORES);
             break;
 
         }

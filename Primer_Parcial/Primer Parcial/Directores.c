@@ -55,6 +55,9 @@ int buscarLibreDirector(eDirector listado[],int cantidad)
 int cargarDatosDirector(eDirector listado[], int cantidad)
 {
     int index = buscarLibreDirector(listado, cantidad);
+    int anioCorrecto = 0;
+    int mesCorrecto = 0;
+    int diaCorrecto = 0;
     getchar();
     if(index >=0)
     {
@@ -71,7 +74,7 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
         fflush(stdin);
         gets(buffer);
         while(strlen(buffer)>20 || !esSoloLetras(buffer) ||
-              nombre_Repetido(listado, CANTIDADDIRECTORES, buffer))
+                nombre_Repetido(listado, CANTIDADDIRECTORES, buffer))
         {
             printf("Reingrese Nombre: ");
             fflush(stdin);
@@ -80,33 +83,75 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
         strcpy(miDirector.nombre, buffer);
 
         printf("Ingrese anio de nacimiento: ");
-        scanf("%d", &miDirector.nacimiento.anio);
-        while(miDirector.nacimiento.anio < 1880 || miDirector.nacimiento.anio > 1990)
+        while(!anioCorrecto)
         {
-            printf("Error! Reingresar anio de nacimiento: \n");
-            printf("Ingrese anio de nacimiento: ");
-            scanf("%d", &miDirector.nacimiento.anio);
+            fflush(stdin);
+            gets(buffer);
+            if(esNumerico(buffer))
+            {
+                miDirector.nacimiento.anio = atoi(buffer);
+
+                if(miDirector.nacimiento.anio < 1880 || miDirector.nacimiento.anio > 1990)
+                {
+                    printf("Error! Reingresar anio de nacimiento: \n");
+                }
+                else
+                {
+                    anioCorrecto = 1;
+                }
+            }
+            else
+            {
+                printf("Error! Ingresar anio de nacimiento Numerico: ");
+            }
         }
         printf("Ingrese mes de nacimiento: ");
-        scanf("%d", &miDirector.nacimiento.mes);
-        while(miDirector.nacimiento.mes < 1 || miDirector.nacimiento.mes > 12)
+        while(!mesCorrecto)
         {
-            printf("Error! Reingresar mes de nacimiento: \n");
-            printf("Ingrese mes de nacimiento: ");
-            scanf("%d", &miDirector.nacimiento.mes);
+            fflush(stdin);
+            gets(buffer);
+            if(esNumerico(buffer))
+            {
+                miDirector.nacimiento.mes = atoi(buffer);
+
+                if(miDirector.nacimiento.mes < 1 || miDirector.nacimiento.mes > 12)
+                {
+                    printf("Error! Reingresar mes de nacimiento: \n");
+                }
+                else
+                {
+                    mesCorrecto = 1;
+                }
+            }
+            else
+            {
+                printf("Error! Ingresar mes de nacimiento Numerico: ");
+            }
 
         }
-
         printf("Ingrese dia de nacimiento: ");
-        scanf("%d", &miDirector.nacimiento.dia);
-        while(miDirector.nacimiento.dia < 1 || miDirector.nacimiento.dia > 31)
+        while(!diaCorrecto)
         {
-            printf("Error! Reingresar dia de nacimiento: \n");
-            printf("Ingrese mes de nacimiento: ");
-            scanf("%d", &miDirector.nacimiento.dia);
+            fflush(stdin);
+            gets(buffer);
+            if(esNumerico(buffer))
+            {
+                miDirector.nacimiento.dia = atoi(buffer);
+
+                if(miDirector.nacimiento.dia < 1 || miDirector.nacimiento.dia > 31)
+                {
+                    printf("Error! Reingresar dia de nacimiento: \n");
+                }
+                else
+                {
+                    diaCorrecto = 1;
+                }
+            }
+            else
+            {
+                printf("Error! Ingresar dia de nacimiento Numerico: ");
+            }
         }
-
-
         printf("Ingrese Nacionalidad: ");
         fflush(stdin);
         gets(buffer);
@@ -229,7 +274,7 @@ int nombre_Repetido(eDirector* miDirector, int lenD, char* nombre)
     {
         if(strcmp(miDirector[i].nombre, nombre )== 0)
         {
-            printf("Nombre ya ingresado, por favor ingrese otro: ");
+            printf("Nombre ya ingresado, por favor ingrese otro. ");
             retorno = 1;
             break;
         }
