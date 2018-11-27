@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="MenuDeOpciones.h" />
+		<Unit filename="Nacionalidad.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Nacionalidad.h" />
 		<Unit filename="Peliculas.c">
 			<Option compilerVar="CC" />
 		</Unit>

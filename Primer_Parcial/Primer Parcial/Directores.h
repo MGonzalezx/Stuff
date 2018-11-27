@@ -2,6 +2,9 @@
 #define isActive 0
 #define isEmpty 1
 #include "Peliculas.h"
+#include "Nacionalidad.h"
+
+
 
 typedef struct
 {
@@ -15,6 +18,7 @@ typedef struct
     char nombre[20];
     eFecha nacimiento;
     char nacionalidad[30];
+    int idNacionalidad;
     int estado;
 
 }eDirector;
@@ -88,3 +92,15 @@ int busca_Nombre_Devuelve_ID(eDirector* listaDirector, char nombre[], int cantid
 int peliculas_Por_Director(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD);
 
 int busca_Pelicula_Por_Director(ePelicula* listaPelicula, int directorID, int lenP);
+
+int busca_Descripcion_Devuelve_IDNacionalidad(eNacionalidad* listaNacionalidad, char nombre[], int cantidad);
+
+int cantidad_Peliculas_Por_Nacionalidad(eNacionalidad* listaNacionalidad, ePelicula* listaPelicula, eDirector* listaDirector,
+                                       int lenP, int lenD, int lenN);
+
+ int peliculas_Por_Nacionalidad_Director(eNacionalidad* listaNacionalidad, ePelicula* listaPelicula, eDirector* listaDirector,
+                                        int lenP, int lenD, int lenN);
+
+int busca_Pelicula_Por_Nacionalidad_Director(eDirector* listaDirector, ePelicula* listaPelicula, int nacionalidadID, int lenP);
+
+int contador_Peliculas_Nacionalidad(eNacionalidad* listaNacionalidad, ePelicula* listaPelicula, int idDirector, int cantP);
