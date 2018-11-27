@@ -78,3 +78,13 @@ void peliculas_Con_Director(ePelicula* listaPelicula, eDirector* listaDirector, 
 int nombre_Repetido(eDirector* miDirector, int lenD, char* nombre);
 
 int contador_Peliculas(ePelicula* listaPelicula, int idDirector, int cantP);
+
+int director_Con_Mas_Peliculas(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD);
+
+int peliculas_dirigidas_Por_Director(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD);
+
+int busca_Nombre_Devuelve_ID(eDirector* listaDirector, char nombre[], int cantidad);
+
+int peliculas_Por_Director(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD);
+
+int busca_Pelicula_Por_Director(ePelicula* listaPelicula, int directorID, int lenP);

@@ -24,12 +24,12 @@ void menuDeOpciones()
     strcpy(listadoMainPelicula[0].nacionalidad,"Peruano");
     strcpy(listadoMainPelicula[0].titulo,"El wachin");
 
-    listadoMainPelicula[1].anio = 2016;
+    /*listadoMainPelicula[1].anio = 2016;
     listadoMainPelicula[1].estado = isActive;
     listadoMainPelicula[1].idDirector = 0;
     listadoMainPelicula[1].identificador = 1;
     strcpy(listadoMainPelicula[1].nacionalidad,"argentino");
-    strcpy(listadoMainPelicula[1].titulo,"El wachin 2");
+    strcpy(listadoMainPelicula[1].titulo,"El wachin 2");*/
 
     listadoMainDirectores[0].id = 0;
     listadoMainDirectores[0].nacimiento.anio = 1900;
@@ -77,7 +77,10 @@ void menuDeOpciones()
                 printf("\nb. Directores.");
                 printf("\nc. La/s peliculas mas viejas.");
                 printf("\nd. Cada pelicula con el nombre de su director.");
-                printf("\ne. Nada, salir.");
+                printf("\ne. Peliculas por director.");
+                printf("\nf. Cantidad de peliculas por director.");
+                printf("\ng. Director con mas peliculas.");
+                printf("\nh. Nada, salir.");
                 printf("\nIngrese una opcion: \n");
                 scanf("%s", &opcion2);
                 switch(opcion2)
@@ -91,13 +94,24 @@ void menuDeOpciones()
                     listadoDirectores(listadoMainDirectores, CANTIDADDIRECTORES);
                     break;
                 case 'c':
-                   printf("PELICULAS: \nID    Titulo         Anio    Nacionalidad   IDDirector\n");
+                    printf("PELICULAS: \nID    Titulo         Anio    Nacionalidad   IDDirector\n");
                     peliculas_Mas_Viejas(listadoMainPelicula, CANTIDADPELICULAS);
                     break;
                 case 'd':
                     peliculas_Con_Director(listadoMainPelicula, listadoMainDirectores, CANTIDADPELICULAS, CANTIDADDIRECTORES);
                     break;
                 case 'e':
+                            peliculas_Por_Director(listadoMainPelicula, listadoMainDirectores, CANTIDADPELICULAS, CANTIDADDIRECTORES);
+                    break;
+                case 'f':
+                        peliculas_dirigidas_Por_Director(listadoMainPelicula, listadoMainDirectores, CANTIDADPELICULAS, CANTIDADDIRECTORES);
+                    break;
+                case 'g':
+                        puts("\nEl siguiente director tiene la mayor cantidad de peliculas: ");
+                        printf("\nID    Nombre         Fecha de Nacimiento    Nacionalidad\n");
+                        director_Con_Mas_Peliculas(listadoMainPelicula, listadoMainDirectores, CANTIDADPELICULAS, CANTIDADDIRECTORES);
+                    break;
+                case 'h':
 
                     break;
                 default:
@@ -107,7 +121,7 @@ void menuDeOpciones()
 
 
             }
-            while(opcion2 !='e');
+            while(opcion2 !='h');
             break;
 
         case 7:

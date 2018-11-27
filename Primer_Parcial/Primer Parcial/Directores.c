@@ -298,4 +298,120 @@ int contador_Peliculas(ePelicula* listaPelicula, int idDirector, int cantP)
     return contador;
 }
 
+int director_Con_Mas_Peliculas(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD)
+{
+    int contadorPeliculas;
+    int mayorNumeroDePeliculas;
+    int bandera = 0;
+    int i;
+    for(i=0; i<lenD; i++)
+    {
+        if(listaDirector[i].estado==isActive)
+        {
+            contadorPeliculas = contador_Peliculas(listaPelicula, listaDirector[i].id, lenP);
+        }
 
+        if(bandera == 0)
+        {
+            mayorNumeroDePeliculas = contadorPeliculas;
+            bandera = 1;
+        }
+
+        if(contadorPeliculas > mayorNumeroDePeliculas)
+        {
+            mayorNumeroDePeliculas = contadorPeliculas;
+        }
+    }
+
+    for(i=0; i<lenD; i++)
+    {
+        contadorPeliculas = contador_Peliculas(listaPelicula, listaDirector[i].id, lenP);
+        if(listaDirector[i].estado==isActive && contadorPeliculas == mayorNumeroDePeliculas)
+        {
+            mostrarUnDirector(listaDirector[i]);
+        }
+    }
+    return 0;
+}
+
+int busca_Nombre_Devuelve_ID(eDirector* listaDirector, char nombre[], int cantidad)
+{
+    int id = -1;
+    int i;
+    for(i = 0; i < cantidad; i++)
+    {
+        if(stricmp(listaDirector[i].nombre, nombre) == 0)
+        {
+            id = listaDirector[i].id;
+            break;
+        }
+    }
+    return id;
+}
+
+
+
+
+
+int peliculas_dirigidas_Por_Director(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD)
+{
+    char nombreDirector[20];
+    int directorID;
+    int contadorDePeliculas;
+
+    puts("Ingrese el nombre del director: ");
+    fflush(stdin);
+    gets(nombreDirector);
+    directorID = busca_Nombre_Devuelve_ID(listaDirector, nombreDirector, lenD);
+    if(directorID >= 0)
+    {
+        contadorDePeliculas = contador_Peliculas(listaPelicula, directorID, lenP);
+         printf("%15s %15s\n", "Director", "Cantidad de Peliculas");
+        printf("%15s %15d\n", nombreDirector, contadorDePeliculas);
+    }
+    else
+    {
+        puts("\nEl director no existe!!\n");
+    }
+    return 0;
+}
+int busca_Pelicula_Por_Director(ePelicula* listaPelicula, int directorID, int lenP)
+{
+    int flag = 0;
+    int i;
+    for(i = 0; i < lenP; i++)
+    {
+        if(listaPelicula[i].estado == isActive && listaPelicula[i].idDirector == directorID)
+        {
+            printf("\n  %s\n", listaPelicula[i].titulo);
+            flag = 1;
+        }
+    }
+    if(flag==0)
+    {
+        puts("\nNo existen peliculas para mostrar!!\n");
+    }
+    return 0;
+}
+
+
+
+int peliculas_Por_Director(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD)
+{
+    char nombreDirector[20];
+    int directorID;
+    puts("Introduzca el nombre del director: ");
+                fflush(stdin);
+                gets(nombreDirector);
+                directorID = busca_Nombre_Devuelve_ID(listaDirector, nombreDirector, lenD);
+                if(directorID>=0)
+                {
+                    busca_Pelicula_Por_Director(listaPelicula, directorID, lenP);
+                }
+                else
+                {
+                    puts("\nEl director no existe!!\n");
+                }
+                return 0;
+
+}
