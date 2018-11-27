@@ -180,7 +180,7 @@
 	<string.h>
 	"utn.h"
 
-1543187742 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\directores.c
+1543276039 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\directores.c
 	<stdio.h>
 	<stdio.h>
 	<stdlib.h>
@@ -192,12 +192,12 @@
 
 1540855490 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\utn.h
 
-1543095456 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\directores.h
+1543276872 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\directores.h
 	"Peliculas.h"
 
-1540855490 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\peliculas.h
+1543274959 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\peliculas.h
 
-1543095456 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\main.c
+1543270196 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -205,9 +205,9 @@
 	<conio.h>
 	"MenuDeOpciones.h"
 
-1540855490 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\menudeopciones.h
+1543272446 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\menudeopciones.h
 
-1543187377 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\menudeopciones.c
+1543276739 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\menudeopciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -223,7 +223,7 @@
 	<string.h>
 	"utn.h"
 
-1543186537 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\peliculas.c
+1543274959 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\peliculas.c
 	<stdio.h>
 	<stdio.h>
 	<stdlib.h>

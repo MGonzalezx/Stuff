@@ -93,7 +93,7 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
 
                 if(miDirector.nacimiento.anio < 1880 || miDirector.nacimiento.anio > 1990)
                 {
-                    printf("Error! Reingresar anio de nacimiento: \n");
+                    printf("Error! Reingresar anio de nacimiento entre 1880 y 1990: \n");
                 }
                 else
                 {
@@ -116,7 +116,7 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
 
                 if(miDirector.nacimiento.mes < 1 || miDirector.nacimiento.mes > 12)
                 {
-                    printf("Error! Reingresar mes de nacimiento: \n");
+                    printf("Error! Reingresar mes de nacimiento entre 1 y 12: \n");
                 }
                 else
                 {
@@ -140,7 +140,7 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
 
                 if(miDirector.nacimiento.dia < 1 || miDirector.nacimiento.dia > 31)
                 {
-                    printf("Error! Reingresar dia de nacimiento: \n");
+                    printf("Error! Reingresar dia de nacimiento entre 1 y 31: \n");
                 }
                 else
                 {
@@ -254,7 +254,7 @@ void peliculas_Con_Director(ePelicula* listaPelicula, eDirector* listaDirector, 
         if(listaPelicula[i].estado == isActive)
         {
 
-            for(j = 0; j<lenD; i++)
+            for(j = 0; j<lenD; j++)
             {
                 if(listaPelicula[i].idDirector == listaDirector[j].id)
                 {
@@ -281,3 +281,21 @@ int nombre_Repetido(eDirector* miDirector, int lenD, char* nombre)
     }
     return retorno;
 }
+
+
+
+int contador_Peliculas(ePelicula* listaPelicula, int idDirector, int cantP)
+{
+    int contador = 0;
+    int i;
+    for(i = 0; i < cantP; i++)
+    {
+        if(listaPelicula[i].estado == isActive && listaPelicula[i].idDirector == idDirector)
+        {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+

@@ -24,12 +24,12 @@ void menuDeOpciones()
     strcpy(listadoMainPelicula[0].nacionalidad,"Peruano");
     strcpy(listadoMainPelicula[0].titulo,"El wachin");
 
-    /*listadoMainPelicula[1].anio = 2016;
+    listadoMainPelicula[1].anio = 2016;
     listadoMainPelicula[1].estado = isActive;
-    listadoMainPelicula[1].idDirector = 1;
+    listadoMainPelicula[1].idDirector = 0;
     listadoMainPelicula[1].identificador = 1;
     strcpy(listadoMainPelicula[1].nacionalidad,"argentino");
-    strcpy(listadoMainPelicula[1].titulo,"El wachin 2");*/
+    strcpy(listadoMainPelicula[1].titulo,"El wachin 2");
 
     listadoMainDirectores[0].id = 0;
     listadoMainDirectores[0].nacimiento.anio = 1900;
@@ -39,17 +39,17 @@ void menuDeOpciones()
     strcpy(listadoMainDirectores[0].nacionalidad,"Peruano");
     listadoMainDirectores[0].estado = isActive;
 
-
+    char opcion2;
     int opcion;
     do
     {
-        printf("\n1. Alta pelicula");
-        printf("\n2. Modificar datos de una pelicula ");
-        printf("\n3. Dar de baja pelicula");
-        printf("\n4. Ingresar Nuevo director");
-        printf("\n5. Dar de baja Director");
-        printf("\n6. Informar");
-        printf("\n7. Salir");
+
+        printf("\n1. Alta pelicula.");
+        printf("\n2. Modificar datos de una pelicula.");
+        printf("\n3. Dar de baja pelicula.");
+        printf("\n4. Ingresar Nuevo director.");
+        printf("\n5. Dar de baja Director.");
+        printf("\n6. Informar.");
         printf("\nIngrese una opcion: \n");
         scanf("%d", &opcion);
         switch(opcion)
@@ -70,13 +70,50 @@ void menuDeOpciones()
             darDeBajaDirector(listadoMainDirectores, CANTIDADDIRECTORES);
             break;
         case 6:
-            printf("PELICULAS: \nID    Titulo         Anio    Nacionalidad   IDDirector\n");
-            listadoPelicula(listadoMainPelicula, CANTIDADPELICULAS);
-            printf("\nDIRECTORES: \nID    Nombre         Fecha de Nacimiento    Nacionalidad\n");
-            listadoDirectores(listadoMainDirectores, CANTIDADDIRECTORES);
-            //peliculas_Con_Director(listadoMainPelicula, listadoMainDirectores, CANTIDADPELICULAS, CANTIDADDIRECTORES);
+
+            do
+            {
+                printf("\na. Peliculas.");
+                printf("\nb. Directores.");
+                printf("\nc. La/s peliculas mas viejas.");
+                printf("\nd. Cada pelicula con el nombre de su director.");
+                printf("\ne. Nada, salir.");
+                printf("\nIngrese una opcion: \n");
+                scanf("%s", &opcion2);
+                switch(opcion2)
+                {
+                case 'a':
+                    printf("PELICULAS: \nID    Titulo         Anio    Nacionalidad   IDDirector\n");
+                    listadoPelicula(listadoMainPelicula, CANTIDADPELICULAS);
+                    break;
+                case 'b':
+                    printf("\nDIRECTORES: \nID    Nombre         Fecha de Nacimiento    Nacionalidad\n");
+                    listadoDirectores(listadoMainDirectores, CANTIDADDIRECTORES);
+                    break;
+                case 'c':
+                   printf("PELICULAS: \nID    Titulo         Anio    Nacionalidad   IDDirector\n");
+                    peliculas_Mas_Viejas(listadoMainPelicula, CANTIDADPELICULAS);
+                    break;
+                case 'd':
+                    peliculas_Con_Director(listadoMainPelicula, listadoMainDirectores, CANTIDADPELICULAS, CANTIDADDIRECTORES);
+                    break;
+                case 'e':
+
+                    break;
+                default:
+                    printf("Opcion incorrecta!!");
+                    break;
+                }
+
+
+            }
+            while(opcion2 !='e');
             break;
 
+        case 7:
+            break;
+        default:
+            printf("\nOpcion incorrecta, por favor elegir una opcion entre el 1 y 7\n");
         }
     }
     while(opcion !=7);

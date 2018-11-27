@@ -383,3 +383,33 @@ void darDeBajaPelicula(ePelicula listado[], int cantidad)
         getch();
     }
 }
+
+int peliculas_Mas_Viejas(ePelicula listado[], int cantidadP)
+{
+    int anioAnterior;
+    int flag = 0;
+    int i;
+    for(i = 0; i < cantidadP; i++)
+    {
+        if(listado[i].estado==isActive && flag==0)
+        {
+            anioAnterior = listado[i].anio;
+            flag = 1;
+        }
+
+        if(listado[i].estado == isActive && listado[i].anio < anioAnterior)
+        {
+            anioAnterior = listado[i].anio;
+        }
+    }
+
+    for(i = 0; i < cantidadP ; i++)
+    {
+        if(listado[i].estado == isActive && listado[i].anio == anioAnterior)
+        {
+            mostrarUnaPelicula(listado[i]);
+        }
+    }
+    return 0;
+}
+

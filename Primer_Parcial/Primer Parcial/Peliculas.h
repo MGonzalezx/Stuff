@@ -76,3 +76,6 @@ void modificarUnaPelicula(ePelicula listado[], int cantidad);
  *
  */
 void darDeBajaPelicula(ePelicula listado[], int cantidad);
+
+int peliculas_Mas_Viejas(ePelicula listaPeliculas[], int cantidadP);
+

@@ -76,3 +76,5 @@ void darDeBajaDirector(eDirector listado[], int cantidad);
 void peliculas_Con_Director(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD);
 
 int nombre_Repetido(eDirector* miDirector, int lenD, char* nombre);
+
+int contador_Peliculas(ePelicula* listaPelicula, int idDirector, int cantP);
