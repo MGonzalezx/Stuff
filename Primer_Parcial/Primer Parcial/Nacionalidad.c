@@ -6,6 +6,8 @@
 #include <conio.h>
 #include "utn.h"
 #include "Nacionalidad.h"
+#define isActive 0
+#define isEmpty 1
 
 
 
@@ -43,3 +45,17 @@ int buscarLibreNacionalidad(eNacionalidad listado[],int cantidad)
     return index;
 }
 
+void hardcodeo_Nacionalidad(eNacionalidad* listadoMainNacionalidad)
+{
+    listadoMainNacionalidad[0].id = 1;
+    strcpy(listadoMainNacionalidad[0].descripcion , "Argentino");
+    listadoMainNacionalidad[0].estado = isActive;
+
+    listadoMainNacionalidad[1].id = 2;
+    strcpy(listadoMainNacionalidad[1].descripcion , "Peruano");
+    listadoMainNacionalidad[1].estado = isActive;
+
+    listadoMainNacionalidad[2].id = 3;
+    strcpy(listadoMainNacionalidad[2].descripcion , "Brasilero");
+    listadoMainNacionalidad[2].estado = isActive;
+}

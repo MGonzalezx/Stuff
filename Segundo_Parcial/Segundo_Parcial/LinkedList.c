@@ -670,3 +670,23 @@ LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*))
     }
     return cloneArray;
 }
+
+
+int ll_map(LinkedList* this, void (*pFunc)(void*))
+{
+    int retorno = -1;
+    int index;
+    void* auxiliar = NULL;
+
+    if(this != NULL && ll_len(this) > 1 && pFunc != NULL)
+    {
+        retorno = 0;
+
+        for(index=0; index < ll_len(this); index++)
+        {
+            auxiliar = ll_get(this, index);
+            pFunc(auxiliar);
+        }
+    }
+    return retorno;
+}

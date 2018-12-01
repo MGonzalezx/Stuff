@@ -233,7 +233,7 @@
 	"utn.h"
 	"Peliculas.h"
 
-1543330863 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\directores.c
+1543676457 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\directores.c
 	<stdio.h>
 	<stdio.h>
 	<stdlib.h>
@@ -243,15 +243,15 @@
 	"utn.h"
 	"Directores.h"
 
-1543319285 c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\utn.h
+1543666849 c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\utn.h
 
-1543330253 c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\directores.h
+1543676252 c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\directores.h
 	"Peliculas.h"
 	"Nacionalidad.h"
 
-1543324736 c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\peliculas.h
+1543668255 c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\peliculas.h
 
-1543319285 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\main.c
+1543666849 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -259,9 +259,9 @@
 	<conio.h>
 	"MenuDeOpciones.h"
 
-1543325566 c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\menudeopciones.h
+1543666849 c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\menudeopciones.h
 
-1543324670 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\peliculas.c
+1543675225 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\peliculas.c
 	<stdio.h>
 	<stdio.h>
 	<stdlib.h>
@@ -271,14 +271,14 @@
 	"utn.h"
 	"Peliculas.h"
 
-1543319285 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\utn.c
+1543666849 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 	"utn.h"
 
-1543330550 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\menudeopciones.c
+1543676338 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\menudeopciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -287,7 +287,7 @@
 	"Directores.h"
 	"MenuDeOpciones.h"
 
-1543326825 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\nacionalidad.c
+1543669955 source:c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\nacionalidad.c
 	<stdio.h>
 	<stdio.h>
 	<stdlib.h>
@@ -297,5 +297,5 @@
 	"utn.h"
 	"Nacionalidad.h"
 
-1543326825 c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\nacionalidad.h
+1543669955 c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\nacionalidad.h
 

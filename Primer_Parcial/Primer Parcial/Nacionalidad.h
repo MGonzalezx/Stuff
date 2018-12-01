@@ -1,6 +1,4 @@
-#define CANTIDADDIRECTORES 2
-#define isActive 0
-#define isEmpty 1
+
 
 
 typedef struct
@@ -14,3 +12,5 @@ typedef struct
 int buscarLibreNacionalidad(eNacionalidad listado[],int cantidad);
 
 int inicializarNacionalidad(eNacionalidad listado[], int cantidad);
+
+void hardcodeo_Nacionalidad(eNacionalidad* listadoMainNacionalidad);

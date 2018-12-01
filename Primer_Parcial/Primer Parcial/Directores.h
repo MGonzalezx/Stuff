@@ -1,6 +1,3 @@
-#define CANTIDADDIRECTORES 2
-#define isActive 0
-#define isEmpty 1
 #include "Peliculas.h"
 #include "Nacionalidad.h"
 
@@ -62,7 +59,7 @@ int cargarDatosDirector(eDirector listado[], int );
  * \return void
  *
  */
-void mostrarUnDirector(eDirector unDirector);
+void mostrarUnDirector(eDirector unDirector, eNacionalidad* unaNacionalidad, int lenN);
 
 
 /** \brief Muestra todos los directores ingresados
@@ -72,7 +69,7 @@ void mostrarUnDirector(eDirector unDirector);
  * \return int
  *
  */
-int listadoDirectores(eDirector listado[],int);
+int listadoDirectores(eDirector listado[],int cantidad, eNacionalidad* nacionaliadListado, int lenN);
 
 
 void darDeBajaDirector(eDirector listado[], int cantidad);
@@ -83,7 +80,7 @@ int nombre_Repetido(eDirector* miDirector, int lenD, char* nombre);
 
 int contador_Peliculas(ePelicula* listaPelicula, int idDirector, int cantP);
 
-int director_Con_Mas_Peliculas(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD);
+int director_Con_Mas_Peliculas(ePelicula* listaPelicula, eDirector* listaDirector, eNacionalidad* listaNacionalidad, int lenP, int lenD, int lenN);
 
 int peliculas_dirigidas_Por_Director(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD);
 
@@ -101,6 +98,10 @@ int cantidad_Peliculas_Por_Nacionalidad(eNacionalidad* listaNacionalidad, ePelic
  int peliculas_Por_Nacionalidad_Director(eNacionalidad* listaNacionalidad, ePelicula* listaPelicula, eDirector* listaDirector,
                                         int lenP, int lenD, int lenN);
 
-int busca_Pelicula_Por_Nacionalidad_Director(eDirector* listaDirector, ePelicula* listaPelicula, int nacionalidadID, int lenP);
+int busca_Pelicula_Por_Nacionalidad_Director(eDirector* listaDirector, ePelicula* listaPelicula, int nacionalidadID, int lenP, int lenD);
 
-int contador_Peliculas_Nacionalidad(eNacionalidad* listaNacionalidad, ePelicula* listaPelicula, int idDirector, int cantP);
+int contador_Peliculas_Nacionalidad(eDirector* listaDirectores, ePelicula* listaPelicula, int idNacionalidad, int cantP);
+
+void hardcodeo_Directores(eDirector* listadoMainDirectores);
+
+

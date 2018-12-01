@@ -252,9 +252,9 @@ int comparar_Nombre(void* primerNombre, void* segundoNombre)
 }
 
 /// LinkedList* ll_filter(LinkedList* this,  --->  int (*pFunc)(void*) <-----)
-int filtrar_Horas_Trabajadas(void* employeeVoid)
+
+void calcular_Sueldo(void* employeeVoid)
 {
-    int retorno = 0;
     Employee* employee = NULL;
     if(employeeVoid != NULL)
     {
@@ -262,79 +262,16 @@ int filtrar_Horas_Trabajadas(void* employeeVoid)
         if(employee->horasTrabajadas < 120)
         {
             employee->sueldo = employee->horasTrabajadas*120;
-            retorno = 1;
         }
         else if(employee->horasTrabajadas > 120 && employee->horasTrabajadas < 160)
         {
             employee->sueldo = employee->horasTrabajadas*120+(employee->horasTrabajadas-120)*240;
-            retorno = 1;
         }
         else if (employee->horasTrabajadas > 160 && employee->horasTrabajadas < 240)
         {
             employee->sueldo = employee->horasTrabajadas*120+(employee->horasTrabajadas-120)*240+(employee->horasTrabajadas-240)*350;
-            retorno = 1;
         }
     }
-    return retorno;
 }
 
-/*int sueldo_promedio(Employee* this, LinkedList* pArrayListEmployee)
-{
-    int i;
-    this = employee;
-    int retorno;
-    for(i=0; i<ll_len(pArrayListEmployee); i++)
-    {
-        employee = ll_get(pArrayListEmployee,index);
 
-        employee_getSueldo(employee, &sueldo);
-    }
-}*/
-
-
-/*int filtrar_Sueldo_Promedio(void* employeeVoid)
-{
-    int retorno = 0;
-    Employee* employee = NULL;
-    int promedio;
-    if(employeeVoid != NULL)
-    {
-        employee = (Employee*)employeeVoid;
-        if(employee->sueldo > promedio)
-        {
-            retorno = 1;
-        }
-    }
-    return retorno;
-}*/
-/*int filtrar_Horas_Trabajadas_Dos(void* employeeVoid)
-{
-    int retorno = 0;
-    Employee* employee = NULL;
-    if(employeeVoid != NULL)
-    {
-        employee = (Employee*)employeeVoid;
-        if(employee->horasTrabajadas > 120 && employee->horasTrabajadas < 160)
-        {
-            employee->sueldo = 240;
-            retorno = 1;
-        }
-    }
-    return retorno;
-}
-
-int filtrar_Horas_Trabajadas_Tres(void* employeeVoid)
-{
-    int retorno = 0;
-    Employee* employee = NULL;
-    if(employeeVoid != NULL)
-    {
-        employee = (Employee*)employeeVoid;
-        if(employee->horasTrabajadas > 160 && employee->horasTrabajadas < 240)
-        {
-            employee->sueldo = 350;
-            retorno = 1;
-        }
-    }
-    return retorno;
-}*/

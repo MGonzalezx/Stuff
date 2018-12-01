@@ -504,8 +504,8 @@ int controller_filtrarHoras(LinkedList* pArrayListEmployee)
     if(pArrayListEmployee != NULL)
     {
         printf("---¡Cargando!---");
-        LinkedList* listaFiltrada = ll_filter(pArrayListEmployee, filtrar_Horas_Trabajadas);
-        controller_ListEmployee_Con_Sueldo(listaFiltrada);
+        ll_map(pArrayListEmployee, calcular_Sueldo);
+        controller_ListEmployee_Con_Sueldo(pArrayListEmployee);
     }
     return 1;
 }

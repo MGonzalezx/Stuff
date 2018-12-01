@@ -5,9 +5,9 @@
 #include <conio.h>
 #include "Directores.h"
 #include "MenuDeOpciones.h"
-#define CANTIDADPELICULAS 2
-#define CANTIDADDIRECTORES 2
-#define CANTIDADNACIONALIDADES 2
+#define CANTIDADPELICULAS 500
+#define CANTIDADDIRECTORES 500
+#define CANTIDADNACIONALIDADES 500
 
 
 void menuDeOpciones()
@@ -20,38 +20,9 @@ void menuDeOpciones()
     inicializarDirector( listadoMainDirectores,CANTIDADDIRECTORES);
 
 
-
-    listadoMainPelicula[0].anio = 2008;
-    listadoMainPelicula[0].idDirector = 1;
-    listadoMainPelicula[0].identificador = 0;
-    listadoMainPelicula[0].estado = isActive;
-    strcpy(listadoMainPelicula[0].nacionalidad,"Peruano");
-    strcpy(listadoMainPelicula[0].titulo,"El wachin");
-
-    listadoMainPelicula[1].anio = 2016;
-    listadoMainPelicula[1].estado = isActive;
-    listadoMainPelicula[1].idDirector = 1;
-    listadoMainPelicula[1].identificador = 1;
-    strcpy(listadoMainPelicula[1].nacionalidad,"Argentino");
-    strcpy(listadoMainPelicula[1].titulo,"El wachin 2");
-
-    listadoMainDirectores[0].id = 0;
-    listadoMainDirectores[0].nacimiento.anio = 1900;
-    listadoMainDirectores[0].nacimiento.mes = 3;
-    listadoMainDirectores[0].nacimiento.dia = 2;
-    listadoMainDirectores[0].idNacionalidad = 0;
-    strcpy(listadMainNacionalidad[0].descripcion, "Peruano");
-    strcpy(listadoMainDirectores[0].nombre, "Marquitos");
-    listadoMainDirectores[0].estado = isActive;
-
-    listadoMainDirectores[1].id = 1;
-    listadoMainDirectores[1].nacimiento.anio = 1950;
-    listadoMainDirectores[1].nacimiento.mes = 10;
-    listadoMainDirectores[1].nacimiento.dia = 30;
-    listadoMainDirectores[1].idNacionalidad = 1;
-    strcpy(listadMainNacionalidad[1].descripcion, "Argentino");
-    strcpy(listadoMainDirectores[1].nombre, "Juan");
-    listadoMainDirectores[1].estado = isActive;
+    hardcodeo_Peliculas(listadoMainPelicula);
+    hardcodeo_Directores(listadoMainDirectores);
+    hardcodeo_Nacionalidad(listadMainNacionalidad);
 
     char opcion2;
     int opcion;
@@ -98,19 +69,24 @@ void menuDeOpciones()
                 printf("\ni. Cantidad de peliculas por nacionalidad.");
                 printf("\nj. Nada, salir.");
                 printf("\nIngrese una opcion: \n");
-                scanf("%s", &opcion2);
+
+                fflush(stdin);
+                scanf("%c", &opcion2);
+
                 switch(opcion2)
                 {
                 case 'a':
-                    printf("PELICULAS: \nID    Titulo         Anio    Nacionalidad   IDDirector\n");
+                    printf("PELICULAS\n\n");
+                    printf("%-7s%-14s%-7s%-15s\n", "ID", "Titulo", "Anio", "Nacionalidad");
                     listadoPelicula(listadoMainPelicula, CANTIDADPELICULAS);
                     break;
                 case 'b':
-                    printf("\nDIRECTORES: \nID    Nombre         Fecha de Nacimiento    IDNacionalidad\n");
-                    listadoDirectores(listadoMainDirectores, CANTIDADDIRECTORES);
+                    printf("\nDIRECTORES: \nID    Nombre         Fecha de Nacimiento    Nacionalidad\n");
+                    listadoDirectores(listadoMainDirectores, CANTIDADDIRECTORES, listadMainNacionalidad, CANTIDADNACIONALIDADES);
                     break;
                 case 'c':
-                    printf("PELICULAS: \nID    Titulo         Anio    Nacionalidad   IDDirector\n");
+                    printf("PELICULAS\n\n");
+                    printf("%-7s%-14s%-7s%-15s\n", "ID", "Titulo", "Anio", "Nacionalidad");
                     peliculas_Mas_Viejas(listadoMainPelicula, CANTIDADPELICULAS);
                     break;
                 case 'd':
@@ -125,14 +101,14 @@ void menuDeOpciones()
                 case 'g':
                     puts("\nEl siguiente director tiene la mayor cantidad de peliculas: ");
                     printf("\nID    Nombre         Fecha de Nacimiento    Nacionalidad\n");
-                    director_Con_Mas_Peliculas(listadoMainPelicula, listadoMainDirectores, CANTIDADPELICULAS, CANTIDADDIRECTORES);
+                    director_Con_Mas_Peliculas(listadoMainPelicula, listadoMainDirectores, listadMainNacionalidad, CANTIDADPELICULAS, CANTIDADDIRECTORES, CANTIDADNACIONALIDADES);
                     break;
                 case 'h':
-                        busca_Pelicula_Por_Nacionalidad_Director(listadoMainDirectores, listadoMainPelicula, 1, CANTIDADPELICULAS);
+                    busca_Pelicula_Por_Nacionalidad_Director(listadoMainDirectores, listadoMainPelicula, 1, CANTIDADPELICULAS, CANTIDADDIRECTORES);
                     break;
                 case 'i':
-                        cantidad_Peliculas_Por_Nacionalidad(listadMainNacionalidad, listadoMainPelicula, listadoMainDirectores
-                                                            ,CANTIDADPELICULAS,CANTIDADDIRECTORES, CANTIDADNACIONALIDADES);
+                    cantidad_Peliculas_Por_Nacionalidad(listadMainNacionalidad, listadoMainPelicula, listadoMainDirectores
+                                                        ,CANTIDADPELICULAS,CANTIDADDIRECTORES, CANTIDADNACIONALIDADES);
                     break;
                 case 'j':
 

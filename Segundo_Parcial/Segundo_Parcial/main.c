@@ -13,16 +13,13 @@ int main()
     printf("                            ---------------------\n"
            "                              ***BIENVENIDO***\n"
            "                            ---------------------\n");
-
     do
     {
-
-
         printf("1. Cargar los datos de los empleados desde el archivo data.csv (modo texto).");
         printf("\n2. Listar empleados");
         printf("\n3. Ordenar empleados");
         printf("\n4. Lista con sueldo.");
-        printf("\n5. Guardar los datos de los empleados en el archivo data.csv (modo texto).");
+        printf("\n5. Guardar los datos de los empleados en el archivo Sueldo.csv (modo texto).");
         printf("\n6. Salir");
         printf("\nIngrese una opcion: \n");
         scanf("%d", &option);

@@ -6,15 +6,17 @@
 #include <conio.h>
 #include "utn.h"
 #include "Peliculas.h"
+#define isActive 0
+#define isEmpty 1
 
 
 
+static int ultimoId = 0;
 
 static int ultimoID()
 {
-    static int id = 0;
-    id++;
-    return id;
+    ultimoId++;
+    return ultimoId;
 }
 
 int buscarLibrePelicula(ePelicula listado[],int cantidad)
@@ -138,7 +140,7 @@ int cargarDatosPelicula(ePelicula listado[], int cantidad)
 }
 void mostrarUnaPelicula(ePelicula unaPelicula)
 {
-    printf("\n%-7d%-14s%-7d%10s%10d\n ", unaPelicula.identificador, unaPelicula.titulo,unaPelicula.anio,unaPelicula.nacionalidad,unaPelicula.idDirector);
+    printf("%-7d%-14s%-7d%-15s\n", unaPelicula.identificador, unaPelicula.titulo,unaPelicula.anio,unaPelicula.nacionalidad);
 
 }
 
@@ -415,3 +417,21 @@ int peliculas_Mas_Viejas(ePelicula listado[], int cantidadP)
     return 0;
 }
 
+void hardcodeo_Peliculas(ePelicula* listadoMainPelicula)
+{
+     listadoMainPelicula[0].anio = 2008;
+    listadoMainPelicula[0].idDirector = 1;
+    listadoMainPelicula[0].identificador = 0;
+    listadoMainPelicula[0].estado = isActive;
+    strcpy(listadoMainPelicula[0].nacionalidad,"Peruano");
+    strcpy(listadoMainPelicula[0].titulo,"El wachin");
+
+    listadoMainPelicula[1].anio = 2016;
+    listadoMainPelicula[1].estado = isActive;
+    listadoMainPelicula[1].idDirector = 0;
+    listadoMainPelicula[1].identificador = 1;
+    strcpy(listadoMainPelicula[1].nacionalidad,"Argentino");
+    strcpy(listadoMainPelicula[1].titulo,"El wachin 2");
+
+    ultimoId = 1;
+}

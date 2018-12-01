@@ -1,6 +1,4 @@
-#define CANTIDADPELICULAS 2
-#define isActive 0
-#define isEmpty 1
+
 
 typedef struct
 {
@@ -79,3 +77,4 @@ void darDeBajaPelicula(ePelicula listado[], int cantidad);
 
 int peliculas_Mas_Viejas(ePelicula listaPeliculas[], int cantidadP);
 
+void hardcodeo_Peliculas(ePelicula* listadoMainPelicula);

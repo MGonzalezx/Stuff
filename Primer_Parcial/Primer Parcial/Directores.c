@@ -6,14 +6,16 @@
 #include <conio.h>
 #include "utn.h"
 #include "Directores.h"
+#define isActive 0
+#define isEmpty 1
 
 
+static int ultimoId = 0;
 
 static int ultimoID()
 {
-    static int id = 0;
-    id++;
-    return id;
+    ultimoId++;
+    return ultimoId;
 }
 
 int inicializarDirector( eDirector listado[],int cantidad)
@@ -76,7 +78,7 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
         fflush(stdin);
         gets(buffer);
         while(strlen(buffer)>20 || !esSoloLetras(buffer) ||
-                nombre_Repetido(listado, CANTIDADDIRECTORES, buffer))
+                nombre_Repetido(listado, cantidad, buffer))
         {
             printf("Reingrese Nombre: ");
             fflush(stdin);
@@ -154,27 +156,29 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
                 printf("Error! Ingresar dia de nacimiento Numerico: ");
             }
         }
-        printf("Ingrese ID de Nacionalidad: ");
+        printf("Ingrese ID Nacionalidad: ");
         while (!idCorrecto)
         {
-
             fflush(stdin);
             gets(buffer);
+
             if(esNumerico(buffer))
             {
+
                 miDirector.idNacionalidad = atoi(buffer);
                 if(miDirector.idNacionalidad < 1 || miDirector.idNacionalidad > 500)
                 {
-                    printf("Reingrese ID de nacionalidad entre un valor de 1 y 500: ");
+                    printf("Reingrese ID Nacionalidad entre un valor de 1 y 500: ");
                 }
                 else
                 {
                     idCorrecto = 1;
                 }
+
             }
             else
             {
-                printf("Error! Ingresar ID de nacionalidad Numerico: ");
+                printf("Error! Ingresar ID del director Numerico: ");
             }
         }
 
@@ -190,14 +194,25 @@ int cargarDatosDirector(eDirector listado[], int cantidad)
     return 1;
 }
 
-void mostrarUnDirector(eDirector unDirector)
+void mostrarUnDirector(eDirector unDirector, eNacionalidad* unaNacionalidad, int lenN)
 {
-    printf("\n%-7d%-14s%7d/%d/%d%19d\n ", unDirector.id, unDirector.nombre, unDirector.nacimiento.dia, unDirector.nacimiento.mes, unDirector.nacimiento.anio, unDirector.idNacionalidad);
+    int i;
+    char nacionaliad[500];
+    strcpy(nacionaliad, "Nacionalidad no encontrada");
+    for(i = 0; i < lenN; i++)
+    {
+        if(unDirector.idNacionalidad == unaNacionalidad[i].id)
+        {
+            strcpy(nacionaliad,unaNacionalidad[i].descripcion);
+            break;
+        }
+    }
+    printf("\n%-7d%-14s%7d/%d/%d%19s\n ", unDirector.id, unDirector.nombre, unDirector.nacimiento.dia, unDirector.nacimiento.mes, unDirector.nacimiento.anio, nacionaliad);
 
 }
 
 
-int listadoDirectores(eDirector listado[],int cantidad)
+int listadoDirectores(eDirector listado[],int cantidad, eNacionalidad* nacionaliadListado, int lenN)
 {
     int retorno = -1;
     int i;
@@ -208,8 +223,7 @@ int listadoDirectores(eDirector listado[],int cantidad)
         {
             if(listado[i].estado==isActive)
             {
-
-                mostrarUnDirector(listado[i]);
+                mostrarUnDirector(listado[i],nacionaliadListado,lenN);
             }
         }
     }
@@ -313,7 +327,7 @@ int contador_Peliculas(ePelicula* listaPelicula, int idDirector, int cantP)
 }
 
 
-int director_Con_Mas_Peliculas(ePelicula* listaPelicula, eDirector* listaDirector, int lenP, int lenD)
+int director_Con_Mas_Peliculas(ePelicula* listaPelicula, eDirector* listaDirector, eNacionalidad* listaNacionalidad, int lenP, int lenD, int lenN)
 {
     int contadorPeliculas;
     int mayorNumeroDePeliculas;
@@ -343,7 +357,7 @@ int director_Con_Mas_Peliculas(ePelicula* listaPelicula, eDirector* listaDirecto
         contadorPeliculas = contador_Peliculas(listaPelicula, listaDirector[i].id, lenP);
         if(listaDirector[i].estado==isActive && contadorPeliculas == mayorNumeroDePeliculas)
         {
-            mostrarUnDirector(listaDirector[i]);
+            mostrarUnDirector(listaDirector[i], listaNacionalidad, lenN);
         }
     }
     return 0;
@@ -441,10 +455,11 @@ int cantidad_Peliculas_Por_Nacionalidad(eNacionalidad* listaNacionalidad, ePelic
     puts("Ingrese la nacionalidad: ");
     fflush(stdin);
     gets(nombreNacionalidad);
+
     nacionalidadID = busca_Descripcion_Devuelve_IDNacionalidad(listaNacionalidad, nombreNacionalidad, lenN);
     if(nacionalidadID >= 0)
     {
-        contadorDePeliculas = contador_Peliculas(listaPelicula, nacionalidadID, lenP);
+        contadorDePeliculas = contador_Peliculas_Nacionalidad(listaDirector, listaPelicula, nacionalidadID, lenP);
         printf("%15s %15s\n", "Nacionalidad", "Cantidad de Peliculas");
         printf("%15s %15d\n", nombreNacionalidad, contadorDePeliculas);
     }
@@ -454,15 +469,23 @@ int cantidad_Peliculas_Por_Nacionalidad(eNacionalidad* listaNacionalidad, ePelic
     }
     return 0;
 }
-int contador_Peliculas_Nacionalidad(eNacionalidad* listaNacionalidad, ePelicula* listaPelicula, int idDirector, int cantP)
+
+int contador_Peliculas_Nacionalidad(eDirector* listaDirectores, ePelicula* listaPelicula, int idNacionalidad, int cantP)
 {
     int contador = 0;
     int i;
+    int j;
     for(i = 0; i < cantP; i++)
     {
-        if(listaPelicula[i].estado == isActive && listaNacionalidad[i].id == idDirector)
+        if(listaDirectores[i].estado == isActive && listaDirectores[i].idNacionalidad == idNacionalidad)
         {
-            contador++;
+            for(j = 0; j < cantP; j++)
+            {
+                if(listaPelicula[j].estado == isActive && listaPelicula[j].idDirector == listaDirectores[i].id )
+                {
+                    contador++;
+                }
+            }
         }
     }
     return contador;
@@ -484,24 +507,25 @@ int busca_Descripcion_Devuelve_IDNacionalidad(eNacionalidad* listaNacionalidad, 
     return id;
 }
 
-/*int peliculas_Por_Nacionalidad_Director(eNacionalidad* listaNacionalidad, ePelicula* listaPelicula, eDirector* listaDirector,
-                                        int lenP, int lenD, int lenN)
-{
 
-
-
-}*/
-
-int busca_Pelicula_Por_Nacionalidad_Director(eDirector* listaDirector, ePelicula* listaPelicula, int nacionalidadID, int lenP)
+int busca_Pelicula_Por_Nacionalidad_Director(eDirector* listaDirector, ePelicula* listaPelicula, int nacionalidadID, int lenP, int lenD)
 {
     int flag = 0;
     int i;
-    for(i = 0; i < lenP; i++)
+    int j;
+    for(i = 0; i < lenD; i++)
     {
-        if(listaPelicula[i].estado == isActive && listaDirector[i].idNacionalidad == nacionalidadID)
+        if(listaDirector[i].estado == isActive && listaDirector[i].idNacionalidad == nacionalidadID)
         {
-            printf("\n  %s\n", listaPelicula[i].titulo);
-            flag = 1;
+            for( j=0; j< lenP; j++)
+            {
+                if(listaPelicula[j].estado == isActive && listaPelicula[j].idDirector == listaDirector[i].id)
+                {
+                    printf("\n  %s\n", listaPelicula[j].titulo);
+                    flag = 1;
+                }
+            }
+
         }
     }
     if(flag==0)
@@ -510,3 +534,25 @@ int busca_Pelicula_Por_Nacionalidad_Director(eDirector* listaDirector, ePelicula
     }
     return 0;
 }
+
+void hardcodeo_Directores(eDirector* listadoMainDirectores)
+{
+    listadoMainDirectores[0].id = 0;
+    listadoMainDirectores[0].nacimiento.anio = 1900;
+    listadoMainDirectores[0].nacimiento.mes = 3;
+    listadoMainDirectores[0].nacimiento.dia = 2;
+    listadoMainDirectores[0].idNacionalidad = 1;
+    strcpy(listadoMainDirectores[0].nombre, "Marquitos");
+    listadoMainDirectores[0].estado = isActive;
+
+    listadoMainDirectores[1].id = 1;
+    listadoMainDirectores[1].nacimiento.anio = 1950;
+    listadoMainDirectores[1].nacimiento.mes = 10;
+    listadoMainDirectores[1].nacimiento.dia = 30;
+    listadoMainDirectores[1].idNacionalidad = 2;
+    strcpy(listadoMainDirectores[1].nombre, "Juan");
+    listadoMainDirectores[1].estado = isActive;
+
+    ultimoId = 1;
+}
+
