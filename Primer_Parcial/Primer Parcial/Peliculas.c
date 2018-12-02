@@ -184,8 +184,6 @@ void modificarUnaPelicula(ePelicula listado[], int cantidad)
 {
     ePelicula miPelicula;
     char buffer[1024];
-    char titulo[20];
-    char nacionalidad[30];
     int identificador;
     char opcion;
     int i;
@@ -235,7 +233,7 @@ void modificarUnaPelicula(ePelicula listado[], int cantidad)
                     opcion=getche();
                     if(opcion=='s')
                     {
-                        strcpy(listado[i].titulo, titulo);
+                        strcpy(listado[i].titulo, miPelicula.titulo);
                         printf("\nTitulo modificado!!\n");
                     }
                     else if(opcion=='n')
@@ -280,13 +278,22 @@ void modificarUnaPelicula(ePelicula listado[], int cantidad)
                     break;
                 case 'c':
                     printf("\nIngrese la nueva nacionalidad: ");
-                    scanf("%s", nacionalidad);
+                    fflush(stdin);
+                    gets(buffer);
+                    while(strlen(buffer)>30 || !esSoloLetras(buffer))
+                    {
+                        printf("Reingrese Nacionalidad: ");
+                        fflush(stdin);
+                        gets(buffer);
+
+                    }
+                    strcpy(miPelicula.nacionalidad, buffer);
 
                     printf("¿Esta seguro que desea modificar la nacionalidad? s=si n=no\n ");
                     opcion=getche();
                     if(opcion=='s')
                     {
-                        strcpy(listado[i].nacionalidad, nacionalidad);
+                        strcpy(listado[i].nacionalidad, miPelicula.nacionalidad);
                         printf("\nNacionalidad modificada!!\n");
                     }
                     else if(opcion=='n')
@@ -419,7 +426,7 @@ int peliculas_Mas_Viejas(ePelicula listado[], int cantidadP)
 
 void hardcodeo_Peliculas(ePelicula* listadoMainPelicula)
 {
-     listadoMainPelicula[0].anio = 2008;
+    listadoMainPelicula[0].anio = 2008;
     listadoMainPelicula[0].idDirector = 1;
     listadoMainPelicula[0].identificador = 0;
     listadoMainPelicula[0].estado = isActive;

@@ -19,11 +19,11 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
     {
         retorno = 0;
         char id[500], nombre[128], horasTrabajadas[500],direccion[500], sueldo[500];
-        fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, direccion, horasTrabajadas, sueldo);
+        fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, direccion, horasTrabajadas);
         do
         {
-            fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, direccion,horasTrabajadas,sueldo);
-            Employee* e = employee_newParametros(id, nombre, direccion, horasTrabajadas,sueldo);
+            fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, direccion,horasTrabajadas);
+            Employee* e = employee_newParametros(id, nombre, direccion, horasTrabajadas, sueldo);
             ll_add(pArrayListEmployee, e);
             cargarMaximoId(atoi(id));
 

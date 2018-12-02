@@ -395,7 +395,7 @@ int peliculas_dirigidas_Por_Director(ePelicula* listaPelicula, eDirector* listaD
     if(directorID >= 0)
     {
         contadorDePeliculas = contador_Peliculas(listaPelicula, directorID, lenP);
-        printf("%15s %15s\n", "Director", "Cantidad de Peliculas");
+        printf("%15s %15s\n", "Director", "    Cantidad de Peliculas");
         printf("%15s %15d\n", nombreDirector, contadorDePeliculas);
     }
     else
@@ -460,7 +460,7 @@ int cantidad_Peliculas_Por_Nacionalidad(eNacionalidad* listaNacionalidad, ePelic
     if(nacionalidadID >= 0)
     {
         contadorDePeliculas = contador_Peliculas_Nacionalidad(listaDirector, listaPelicula, nacionalidadID, lenP);
-        printf("%15s %15s\n", "Nacionalidad", "Cantidad de Peliculas");
+        printf("%15s %15s\n", "Nacionalidad", "    Cantidad de Peliculas");
         printf("%15s %15d\n", nombreNacionalidad, contadorDePeliculas);
     }
     else

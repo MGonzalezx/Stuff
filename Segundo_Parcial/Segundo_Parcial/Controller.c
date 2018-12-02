@@ -438,7 +438,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
+int controller_saveAsText(char* path, LinkedList* pArrayListEmployee, float promedioSueldos)
 {
     if(path != NULL && pArrayListEmployee != NULL)
     {
@@ -449,12 +449,15 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
         if(pFile != NULL)
         {
 
-
+            fprintf(pFile, "%s,%s,%s,%s,%s\n", "Id", "Nombre", "Direccion", "HorasTrabajadas", "Sueldo");
             for(index = 0; index < ll_len(pArrayListEmployee); index++)
 
             {
                 employee = (Employee *)ll_get(pArrayListEmployee, index);
-                fprintf(pFile,"%d--%s--%s--%d--%d\n", employee->id, employee->nombre, employee->direccion, employee->horasTrabajadas, employee->sueldo);
+                if(employee ->sueldo > promedioSueldos)
+                {
+                fprintf(pFile,"%d,%s,%s,%d,%d\n", employee->id, employee->nombre, employee->direccion, employee->horasTrabajadas, employee->sueldo);
+                }
             }
 
         }
@@ -499,7 +502,7 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
     return 1;
 }
 
-int controller_filtrarHoras(LinkedList* pArrayListEmployee)
+int controller_lista_Con_Sueldo(LinkedList* pArrayListEmployee)
 {
     if(pArrayListEmployee != NULL)
     {
@@ -509,3 +512,5 @@ int controller_filtrarHoras(LinkedList* pArrayListEmployee)
     }
     return 1;
 }
+
+

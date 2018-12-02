@@ -672,7 +672,7 @@ LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*))
 }
 
 
-int ll_map(LinkedList* this, void (*pFunc)(void*))
+int ll_map(LinkedList* this, int (*pFunc)(void*))
 {
     int retorno = -1;
     int index;

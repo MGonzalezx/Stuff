@@ -180,7 +180,7 @@
 	<string.h>
 	"utn.h"
 
-1543282689 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\directores.c
+1543697345 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\directores.c
 	<stdio.h>
 	<stdio.h>
 	<stdlib.h>
@@ -190,14 +190,15 @@
 	"utn.h"
 	"Directores.h"
 
-1540855490 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\utn.h
+1543688735 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\utn.h
 
-1543282434 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\directores.h
+1543688735 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\directores.h
 	"Peliculas.h"
+	"Nacionalidad.h"
 
-1543274959 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\peliculas.h
+1543688735 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\peliculas.h
 
-1543270196 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\main.c
+1543688735 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -205,9 +206,9 @@
 	<conio.h>
 	"MenuDeOpciones.h"
 
-1543272446 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\menudeopciones.h
+1543688735 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\menudeopciones.h
 
-1543282733 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\menudeopciones.c
+1543688735 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\menudeopciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -216,14 +217,14 @@
 	"Directores.h"
 	"MenuDeOpciones.h"
 
-1540855490 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\utn.c
+1543688735 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 	"utn.h"
 
-1543274959 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\peliculas.c
+1543688735 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\peliculas.c
 	<stdio.h>
 	<stdio.h>
 	<stdlib.h>
@@ -298,4 +299,16 @@
 	"Nacionalidad.h"
 
 1543669955 c:\users\alumno\desktop\nueva carpeta\stuff\primer_parcial\primer parcial\nacionalidad.h
+
+1543688735 c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\nacionalidad.h
+
+1543688735 source:c:\users\martin\desktop\clases programacion y laboratorio 1\stuff\primer_parcial\primer parcial\nacionalidad.c
+	<stdio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"utn.h"
+	"Nacionalidad.h"
 

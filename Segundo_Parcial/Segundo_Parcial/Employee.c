@@ -253,25 +253,64 @@ int comparar_Nombre(void* primerNombre, void* segundoNombre)
 
 /// LinkedList* ll_filter(LinkedList* this,  --->  int (*pFunc)(void*) <-----)
 
-void calcular_Sueldo(void* employeeVoid)
+int calcular_Sueldo(void* this)
 {
     Employee* employee = NULL;
-    if(employeeVoid != NULL)
+    int retorno = -1;
+    int horasTrabajadas;
+    int cantidad = 0;
+    int cantidadDos = 0;
+    int cantidadTres = 0;
+    int sueldo;
+    if(this != NULL)
     {
-        employee = (Employee*)employeeVoid;
-        if(employee->horasTrabajadas < 120)
+        employee = (Employee *)this;
+        employee_getHorasTrabajadas(employee, &horasTrabajadas);
+        if(horasTrabajadas <= 120)
         {
-            employee->sueldo = employee->horasTrabajadas*120;
+            cantidad = horasTrabajadas * 180;
         }
-        else if(employee->horasTrabajadas > 120 && employee->horasTrabajadas < 160)
+        if(horasTrabajadas <= 160)
         {
-            employee->sueldo = employee->horasTrabajadas*120+(employee->horasTrabajadas-120)*240;
+            cantidad = 120 * 180;
+            cantidadDos = (horasTrabajadas - 120) * 240;
         }
-        else if (employee->horasTrabajadas > 160 && employee->horasTrabajadas < 240)
+        if(horasTrabajadas <= 240)
         {
-            employee->sueldo = employee->horasTrabajadas*120+(employee->horasTrabajadas-120)*240+(employee->horasTrabajadas-240)*350;
+            cantidad = 120 * 180;
+            cantidadDos = 40 * 240;
+            cantidadTres = (horasTrabajadas - 160) * 350;
         }
+        sueldo = cantidad + cantidadDos + cantidadTres;
+        employee->sueldo = sueldo;
     }
+    return retorno;
 }
 
 
+float calcular_Promedio(LinkedList* listaEmpleados)
+{
+    Employee* miEmpleado = NULL;
+    int sueldo;
+    float retorno = -1;
+    int index;
+    float promedio;
+    int suma = 0;
+    int contador;
+     if(listaEmpleados != NULL)
+    {
+        contador = ll_len(listaEmpleados);
+        if(contador > 0)
+        {
+            for(index = 0; index < contador; index++)
+            {
+                miEmpleado = (Employee*)ll_get(listaEmpleados, index);
+                employee_getSueldo(miEmpleado, &sueldo);
+                suma = suma + sueldo;
+            }
+            promedio = suma / contador;
+            retorno = promedio;
+        }
+    }
+    return retorno;
+}

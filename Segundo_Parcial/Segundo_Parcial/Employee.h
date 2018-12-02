@@ -40,9 +40,9 @@ int comparar_Sueldo(void* this, void* thisDos);
 int filtrar_Sueldo_Menor_15000(void* employeeVoid);
 int filtrar_Nombres_Inician_Con_A(void* employeeVoid);
 
-int filtrar_Horas_Trabajadas(void* employeeVoid);
-int filtrar_Sueldo_Promedio(void* employeeVoid);
-int sueldo_promedio(Employee* this, LinkedList pArrayListEmployee);
-void calcular_Sueldo(void* employeeVoid);
+////////////////////////////////////////////////////////
+
+int calcular_Sueldo(void* this);
+float calcular_Promedio(LinkedList* listaEmpleados);
 
 #endif // employee_H_INCLUDED
