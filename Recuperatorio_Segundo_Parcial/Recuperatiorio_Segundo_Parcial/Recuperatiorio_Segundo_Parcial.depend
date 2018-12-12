@@ -1,0 +1,67 @@
+# depslib dependency file v1.0
+1544621786 source:c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\abono.c
+	"Abono.h"
+	"LinkedList.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1544618328 source:c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Cliente.h"
+
+1544616182 c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\linkedlist.h
+
+1544616182 c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\controller.h
+
+1544621799 c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\cliente.h
+	"Abono.h"
+	"LinkedList.h"
+
+1544621472 c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\abono.h
+
+1544619518 source:c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Cliente.h"
+	"Parser_Cliente.h"
+	"utn.h"
+
+1544617677 c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\parser_cliente.h
+
+1544616183 c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\utn.h
+
+1544616182 source:c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1544621472 source:c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Cliente.h"
+
+1544619288 source:c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\parser_cliente.c
+	<stdio.h>
+	<stdlib.h>
+	"Cliente.h"
+	"Controller.h"
+
+1544616183 source:c:\users\alumno\desktop\nueva carpeta\stuff\recuperatorio_segundo_parcial\recuperatiorio_segundo_parcial\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+

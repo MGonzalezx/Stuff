@@ -5,7 +5,7 @@
 #include <conio.h>
 #include "LinkedList.h"
 #include "Cliente.h"
-#include "Parser"
+#include "Parser_Cliente.h"
 #include "utn.h"
 
 
@@ -58,7 +58,7 @@ int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_addEmployee(LinkedList* pArrayListEmployee)
+/*int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
     if(pArrayListEmployee != NULL)
     {
@@ -104,7 +104,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 
     }
     return 1;
-}
+}*/
 
 /** \brief Modificar datos de empleado
  *
@@ -113,7 +113,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_editEmployee(LinkedList* pArrayListEmployee,char* path)
+/*int controller_editEmployee(LinkedList* pArrayListEmployee,char* path)
 {
     int id;
     char nombre[128];
@@ -275,7 +275,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee,char* path)
 
 
     return 1;
-}
+}*/
 
 
 
@@ -287,7 +287,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee,char* path)
  * \return int
  *
  */
-int controller_removeEmployee(LinkedList* pArrayListEmployee)
+/*int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
     int id;
     char opcion;
@@ -349,7 +349,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     }
     return 1;
 
-}
+}*/
 
 /** \brief Listar empleados
  *
@@ -366,9 +366,9 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 
         for(i=0; i<ll_len(pArrayListEmployee); i++)
         {
-            printf("%s  %14s  %16s  %6s\n", "Id", "Nombre", "Horas trabajadas", "Sueldo");
+            printf("%s  %16s  %16s  %14s  %6s\n", "Id", "Nombre", "Sexo", "Numero Telefono", "Importe");
             Employee* empleado = (Employee*)ll_get(pArrayListEmployee, i);
-            printf("%d         %s        %d         %d\n", empleado->id, empleado->nombre, empleado->horasTrabajadas, empleado->sueldo);
+            printf("%d  %16s  %14s  %14s  %6d\n", empleado->id, empleado->nombre, empleado->sexo, empleado->numeroTelefono, empleado->importe);
 
         }
     }
@@ -380,6 +380,30 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
     return 1;
 }
 
+/*int controller_ListEmployee_Con_Sueldo(LinkedList* pArrayListEmployee)
+{
+    if(pArrayListEmployee != NULL)
+    {
+
+        int i;
+
+        for(i=0; i<ll_len(pArrayListEmployee); i++)
+            {
+                printf("%s  %14s  %16s  %6s  %6s\n", "Id", "Nombre", "Direccion", "Horas Trabajadas", "Sueldo");
+                Employee* empleado = (Employee*)ll_get(pArrayListEmployee, i);
+                printf("%d  %14s  %16s  %6d  %16d\n", empleado->id, empleado->nombre, empleado->direccion, empleado->horasTrabajadas, empleado->sueldo);
+
+            }
+
+    }
+    else
+    {
+        printf("Error al abrir el archivo\n");
+    }
+
+    return 1;
+}*/
+
 /** \brief Ordenar empleados
  *
  * \param path char*
@@ -387,81 +411,25 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_sortEmployee(LinkedList* pArrayListEmployee)
+/*int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
-    int opcion;
+
     if(pArrayListEmployee != NULL)
     {
-        printf("\n¿De que forma desea ordenar la lista?");
-        printf("\nPresione ENTER para continuar");
 
+        LinkedList* clonLinkendist = ll_clone(pArrayListEmployee);
 
-        do
-        {
-            LinkedList* clonLinkendist = ll_clone(pArrayListEmployee);
+        printf("---¡Cargando!---");
+        ll_sort(clonLinkendist, comparar_Nombre, 1);
+        printf("\nSu lista fue ordenada alfabeticamente!!\n\n");
+        controller_ListEmployee(clonLinkendist);
 
-            printf("\n1. Por ID (mayor a menor)");
-            printf("\n2. Nombre (alfabeticamente)");
-            printf("\n3. Sueldo (mayor a menor)");
-            printf("\n4. Sueldo (menor a mayor)");
-            printf("\n5. Horas trabajadas (mayor a menor)");
-            printf("\n6. Horas trabajadas (menor a mayor)");
-            printf("\n7. Ninguna, salir");
-            printf("\nIngrese una opcion: \n");
-            scanf("%d", &opcion);
-            switch(opcion)
-            {
-            case 1:
-                printf("---¡Cargando!---");
-                ll_sort(clonLinkendist, comparar_ID, 0);
-                printf("\nSu lista fue ordenada de mayor a menor segun los ID!!\n\n");
-                controller_ListEmployee(clonLinkendist);
-                break;
-            case 2:
-                printf("---¡Cargando!---");
-                ll_sort(clonLinkendist, comparar_Nombre, 1);
-                printf("\nSu lista fue ordenada alfabeticamente!!\n\n");
-                controller_ListEmployee(clonLinkendist);
-                break;
-            case 3:
-                printf("---¡Cargando!---");
-                ll_sort(clonLinkendist, comparar_Sueldo, 0);
-                printf("\nSu lista fue ordenada de mayor a menor segun los sueldos!!\n\n");
-                controller_ListEmployee(clonLinkendist);
-                break;
-            case 4:
-                printf("---¡Cargando!---");
-                ll_sort(clonLinkendist, comparar_Sueldo, 1);
-                printf("\nSu lista fue ordenada de menor a mayor segun los sueldos!!\n\n");
-                controller_ListEmployee(clonLinkendist);
-                break;
-            case 5:
-                printf("---¡Cargando!---");
-                ll_sort(clonLinkendist, comparar_HorasTrabajadas, 0);
-                printf("\nSu lista fue ordenada de mayor a menor segun las horas trabajadas!!\n\n");
-                controller_ListEmployee(clonLinkendist);
-                break;
-            case 6:
-                printf("---¡Cargando!---");
-                ll_sort(clonLinkendist, comparar_HorasTrabajadas, 1);
-                printf("\nSu lista fue ordenada de menor a mayor segun las horas trabajadas!!\n\n");
-                controller_ListEmployee(clonLinkendist);
-                break;
-            case 7:
-
-                break;
-            default:
-                printf("\nOpcion incorrecta!!\n\n");
-            }
-            ll_deleteLinkedList(clonLinkendist);
-        }
-        while(opcion != 7);
-
-
+        ll_deleteLinkedList(clonLinkendist);
     }
 
+
     return 1;
-}
+}*/
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
  *
@@ -470,7 +438,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
+/*int controller_saveAsText(char* path, LinkedList* pArrayListEmployee, float promedioSueldos)
 {
     if(path != NULL && pArrayListEmployee != NULL)
     {
@@ -480,11 +448,18 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
         int index;
         if(pFile != NULL)
         {
+
+            fprintf(pFile, "%s,%s,%s,%s,%s\n", "Id", "Nombre", "Direccion", "HorasTrabajadas", "Sueldo");
             for(index = 0; index < ll_len(pArrayListEmployee); index++)
+
             {
                 employee = (Employee *)ll_get(pArrayListEmployee, index);
-                fprintf(pFile,"%d--%s--%d--%d\n", employee->id, employee->nombre, employee->horasTrabajadas, employee->sueldo);
+                if(employee ->sueldo > promedioSueldos)
+                {
+                fprintf(pFile,"%d,%s,%s,%d,%d\n", employee->id, employee->nombre, employee->direccion, employee->horasTrabajadas, employee->sueldo);
+                }
             }
+
         }
         fclose(pFile);
         printf("-----------------------------------------------------------\n"
@@ -492,7 +467,7 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
                "-----------------------------------------------------------\n\n");
     }
     return 1;
-}
+}*/
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
  *
@@ -501,7 +476,7 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
+/*int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
 {
     if(path != NULL && pArrayListEmployee != NULL)
     {
@@ -526,37 +501,16 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
 
     return 1;
 }
-int controller_filtrarSueldo(LinkedList* pArrayListEmployee)
-{
-    if(pArrayListEmployee != NULL)
-    {
-        printf("---¡Cargando!---");
-        LinkedList* listaFiltrada = ll_filter(pArrayListEmployee, filtrar_Sueldo_Menor_15000);
-        printf("\nSu lista fue filtrada con sueldos menores a 15000!!\n\n");
-        controller_ListEmployee(listaFiltrada);
-    }
-    return 1;
-}
-int controller_filtrarNombre(LinkedList* pArrayListEmployee)
-{
-    if(pArrayListEmployee != NULL)
-    {
-        printf("---¡Cargando!---");
-        LinkedList* listaFiltrada = ll_filter(pArrayListEmployee, filtrar_Nombres_Inician_Con_A);
-        printf("\nSu lista fue filtrada con nombres que inician con A!!\n\n");
-        controller_ListEmployee(listaFiltrada);
-    }
-    return 1;
-}
 
-int controller_filtrarHoras(LinkedList* pArrayListEmployee)
+int controller_lista_Con_Sueldo(LinkedList* pArrayListEmployee)
 {
     if(pArrayListEmployee != NULL)
     {
         printf("---¡Cargando!---");
-        LinkedList* listaFiltrada = ll_filter(pArrayListEmployee, filtrar_Horas_Trabajadas);
-        printf("\nSu lista fue filtrada con horas menores a 100!!\n\n");
-        controller_ListEmployee(listaFiltrada);
+        ll_map(pArrayListEmployee, calcular_Sueldo);
+        controller_ListEmployee_Con_Sueldo(pArrayListEmployee);
     }
     return 1;
-}
+}*/
+
+
