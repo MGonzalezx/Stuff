@@ -36,7 +36,7 @@ int tipo_Abono(LinkedList* listaEmpleados)
     {
         for(index = 0; index <ll_len(listaEmpleados); index++)
         {
-               if(strcmp(miEmpleado[index]->numeroTelefono, miEmpleado->numeroTelefono )== 0)
+               if(strcmp(miEmpleado[index]->id, miEmpleado->id )== 0)
                {
                    contador ++;
                retorno = contador;
